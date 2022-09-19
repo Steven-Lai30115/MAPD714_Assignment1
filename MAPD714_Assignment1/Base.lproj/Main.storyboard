@@ -73,8 +73,8 @@
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8K-qB-bUZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="AC">
-                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="39"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="C">
+                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="38"/>
                                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" red="0.55686274509803924" green="0.59999999999999998" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
@@ -82,7 +82,7 @@
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjn-Fb-aPq">
                                                 <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="C">
+                                                <buttonConfiguration key="configuration" style="filled" title="+/-">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" red="0.55686274509803924" green="0.59999999999999998" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -261,16 +261,16 @@
                                                 <buttonConfiguration key="configuration" style="filled" title=".">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="baseBackgroundColor" red="0.5568627451" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-eq-2ed">
                                                 <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="+/-">
+                                                <buttonConfiguration key="configuration" style="filled" title="⌫">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="baseBackgroundColor" red="0.5568627451" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-AB-t1u">
