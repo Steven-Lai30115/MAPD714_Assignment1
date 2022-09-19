@@ -315,6 +315,10 @@
                             <constraint firstItem="MvZ-ag-uD6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLb-Ee-tTa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonStackView" destination="2hj-xx-g0b" id="4da-H1-xO9"/>
+                        <outlet property="displayArea" destination="MvZ-ag-uD6" id="9Iq-CC-5GF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
