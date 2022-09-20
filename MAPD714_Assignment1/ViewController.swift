@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  MAPD714_Assignment1
-//
+//  Calculator App
 //  Created by  Pui Yan Cheung (301252393), Man Nok PUN (301269138), Chin Wai Lai(301257824).
 //  Last modified 15:28 19 Sept 2022
 //
