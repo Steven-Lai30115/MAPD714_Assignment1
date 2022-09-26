@@ -123,26 +123,29 @@ class ViewController: UIViewController {
     }
     
     func isInputInvalid(input: String) -> Bool {
-        if (formulaLabel.text == "" || formulaLabel.text == nil) { return false }
-        
-        let lastDigit = String((formulaLabel.text ?? "").last!)
         
         var isInvalid = false
-        if( lastDigit.isNumber == true ){
-            isInvalid =  [CalculatorButton.plusMinus.name].contains(input)
-        } else if ( (lastDigit.isEmpty == true && resultLabel.text?.isEmpty == true) || lastDigit.isCalculateOperator == true){
-            isInvalid = [ CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input) || input.isCalculateOperator
-        } else if (lastDigit == CalculatorButton.dot.name){
-            // todo: prevent multiple dots in a number
-            isInvalid = [CalculatorButton.dot.name, CalculatorButton.plusMinus.name].contains(input)
-        } else if (lastDigit == CalculatorButton.percentage.name){
-            isInvalid = input.isNumberOperator || input.isNumber
-        } else if (lastDigit.isEmpty == true && resultLabel.text?.isEmpty != true){
-            isInvalid = [CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input)
-        } else if (lastDigit == CalculatorButton.plusMinus.name){
-            isInvalid = [CalculatorButton.percentage.name].contains(input) || input.isCalculateOperator
+        if (formulaLabel.text != "" && formulaLabel.text != nil) {
+            let lastDigit = String((formulaLabel.text ?? "").last!)
+            if( lastDigit.isNumber == true ){
+                isInvalid =  [CalculatorButton.plusMinus.name].contains(input)
+            } else if (lastDigit.isCalculateOperator == true){
+                isInvalid = [ CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input) || input.isCalculateOperator
+            } else if (lastDigit == CalculatorButton.dot.name){
+                // todo: prevent multiple dots in a number
+                isInvalid = [CalculatorButton.dot.name, CalculatorButton.plusMinus.name].contains(input)
+            } else if (lastDigit == CalculatorButton.percentage.name){
+                isInvalid = input.isNumberOperator || input.isNumber
+            } else if (lastDigit == CalculatorButton.plusMinus.name){
+                isInvalid = [CalculatorButton.percentage.name].contains(input) || input.isCalculateOperator
+            }
+        } else {
+            if(resultLabel.text == ""){
+                isInvalid = [ CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input) || input.isCalculateOperator
+            } else if (resultLabel.text != ""){
+                isInvalid = [CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input)
+            }
         }
-        
         if( isInvalid == true ) { self.view.makeToast("Invalid input")}
         return isInvalid
     }
