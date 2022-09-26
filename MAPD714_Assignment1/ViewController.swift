@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var displayArea: UIView!
     @IBOutlet var buttonStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -45,15 +47,16 @@ class ViewController: UIViewController {
         Buttons: C  Backspace
      */
     @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
-        var button = sender as UIButton
-        var originalText = (button.titleLabel!.text ?? "") as String
+        let button = sender as UIButton
+        let originalText = (button.titleLabel!.text ?? "") as String
         switch originalText {
-            case "C":
+            case CalculatorButton.clear.name:
                 formulaLabel.text = ""
                 resultLabel.text = ""
-            default:
-                var droplast = String((formulaLabel.text?.dropLast() ?? "")) as String
+            case CalculatorButton.backspace.name:
+                let droplast = String((formulaLabel.text?.dropLast() ?? "")) as String
                 formulaLabel.text = droplast
+            default: return
         }
     }
         
@@ -61,19 +64,26 @@ class ViewController: UIViewController {
         Buttons: % .  +/-  +  -  *  /
      */
     @IBAction func onOperatorButtonPressed(_ sender: UIButton) {
-        var button = sender as UIButton
-        var originalText = (button.titleLabel!.text ?? "") as String
-        print(originalText)
-        switch originalText {
-            case "%":
-                formulaLabel.text?.append(originalText)
-            case ".":
-                formulaLabel.text?.append(originalText)
-            case "+/-":
-                // todo
-                print ("+/- pressed")
-            default : // + - * /
-                formulaLabel.text?.append(originalText)
+        let button = sender as UIButton
+        let originalText = (button.titleLabel!.text ?? "") as String
+        if( isInputInvalid(input: originalText) == false){
+            switch originalText {
+                case CalculatorButton.percentage.name:
+                    formulaLabel.text?.append(originalText)
+                case CalculatorButton.dot.name:
+                if(formulaLabel.text != nil && formulaLabel.text != "" && String((formulaLabel.text ?? "").last!).isNumber == true) { formulaLabel.text?.append(originalText)
+                    } else {
+                        formulaLabel.text?.append("0.")
+                    }
+                case CalculatorButton.plusMinus.name:
+                    // todo
+                    print ("+/- pressed")
+                case CalculatorButton.add.name,CalculatorButton.subtract.name,CalculatorButton.multiply.name, CalculatorButton.divide.name:
+                
+                
+                    formulaLabel.text?.append(originalText)
+                default: return
+            }
         }
         
     }
@@ -81,16 +91,48 @@ class ViewController: UIViewController {
         Buttons: 0 1 2 3 4 5 6 7 8 9
      */
     @IBAction func onNumberButtonPressed(_ sender: UIButton) {
-        var button = sender as UIButton
-        var originalText = (button.titleLabel!.text ?? "") as String
-        formulaLabel.text?.append(originalText)
+        let button = sender as UIButton
+        let originalText = (button.titleLabel!.text ?? "") as String
+        if( isInputInvalid(input: originalText) == false){
+            formulaLabel.text?.append(originalText)
+        }
     }
     
     /**
         Button: =
      */
-    @IBAction func onEqualButtonPressed(_ sender: Any) {
-        // todo: calculation
-        resultLabel.text = "calculating..."
+    @IBAction func onEqualButtonPressed(_ sender: UIButton) {
+        let button = sender as UIButton
+        let originalText = (button.titleLabel!.text ?? "") as String
+        if( isInputInvalid(input: originalText) == false){
+            // todo: calculation
+            resultLabel.text = "123.456" // mock result
+        }
+        
+    }
+    
+    func isInputInvalid(input: String) -> Bool {
+        if (formulaLabel.text == "" || formulaLabel.text == nil) { return false }
+        
+        let lastDigit = String((formulaLabel.text ?? "").last!)
+        
+        var isInvalid = false
+        if( lastDigit.isNumber == true ){
+            isInvalid =  [CalculatorButton.plusMinus.name].contains(input)
+        } else if ( (lastDigit.isEmpty == true && resultLabel.text?.isEmpty == true) || lastDigit.isCalculateOperator == true){
+            isInvalid = [ CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input) || input.isCalculateOperator
+        } else if (lastDigit == CalculatorButton.dot.name){
+            // todo: prevent multiple dots in a number
+            isInvalid = [CalculatorButton.dot.name, CalculatorButton.plusMinus.name].contains(input)
+        } else if (lastDigit == CalculatorButton.percentage.name){
+            isInvalid = input.isNumberOperator || input.isNumber
+        } else if (lastDigit.isEmpty == true && resultLabel.text?.isEmpty != true){
+            isInvalid = [CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input)
+        } else if (lastDigit == CalculatorButton.plusMinus.name){
+            isInvalid = [CalculatorButton.percentage.name].contains(input) || input.isCalculateOperator
+        }
+        
+        if( isInvalid == true ) { self.view.makeToast("Invalid input")}
+        return isInvalid
     }
 }
