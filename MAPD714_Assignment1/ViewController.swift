@@ -123,10 +123,10 @@ class ViewController: UIViewController {
     }
     
     func isInputInvalid(input: String) -> Bool {
-        
+        let _formulaText = ( lastButtonPressed == CalculatorButton.equal.name ) ? "" : formulaLabel.text
         var isInvalid = false
-        if (formulaLabel.text != "" && formulaLabel.text != nil) {
-            let lastDigit = String((formulaLabel.text ?? "").last!)
+        if (_formulaText != "" && _formulaText != nil) {
+            let lastDigit = String((_formulaText ?? "").last!)
             if( lastDigit.isNumber == true ){
                 isInvalid =  [CalculatorButton.plusMinus.name].contains(input)
             } else if (lastDigit.isCalculateOperator == true){
@@ -146,7 +146,10 @@ class ViewController: UIViewController {
                 isInvalid = [CalculatorButton.percentage.name, CalculatorButton.equal.name].contains(input)
             }
         }
-        if( isInvalid == true ) { self.view.makeToast("Invalid input")}
+        if( isInvalid == true
+            && !(input == CalculatorButton.equal.name && lastButtonPressed == CalculatorButton.equal.name)) {
+            // spam clicking equal is considered as invalid but does not need to prompt error message
+            self.view.makeToast("Invalid input")}
         return isInvalid
     }
 }
