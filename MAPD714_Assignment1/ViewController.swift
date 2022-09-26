@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet var displayArea: UIView!
     @IBOutlet var buttonStackView: UIStackView!
     
+    var lastButtonPressed: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
                 formulaLabel.text = droplast
             default: return
         }
+        lastButtonPressed = originalText
     }
         
     /**
@@ -69,21 +72,26 @@ class ViewController: UIViewController {
         if( isInputInvalid(input: originalText) == false){
             switch originalText {
                 case CalculatorButton.percentage.name:
+                    if(lastButtonPressed == CalculatorButton.equal.name){ formulaLabel.text = "" }
                     formulaLabel.text?.append(originalText)
                 case CalculatorButton.dot.name:
-                if(formulaLabel.text != nil && formulaLabel.text != "" && String((formulaLabel.text ?? "").last!).isNumber == true) { formulaLabel.text?.append(originalText)
-                    } else {
-                        formulaLabel.text?.append("0.")
-                    }
+                    if(lastButtonPressed == CalculatorButton.equal.name){ formulaLabel.text = "" }
+                    if(formulaLabel.text != nil && formulaLabel.text != "" && String((formulaLabel.text ?? "").last!).isNumber == true) { formulaLabel.text?.append(originalText)
+                        } else {
+                            formulaLabel.text?.append("0.")
+                        }
                 case CalculatorButton.plusMinus.name:
+                    if(lastButtonPressed == CalculatorButton.equal.name){ formulaLabel.text = "" }
                     // todo
                     print ("+/- pressed")
                 case CalculatorButton.add.name,CalculatorButton.subtract.name,CalculatorButton.multiply.name, CalculatorButton.divide.name:
-                
-                
+                    if(lastButtonPressed == CalculatorButton.equal.name){
+                        formulaLabel.text = resultLabel.text
+                    }
                     formulaLabel.text?.append(originalText)
                 default: return
             }
+            lastButtonPressed = originalText
         }
         
     }
@@ -94,7 +102,9 @@ class ViewController: UIViewController {
         let button = sender as UIButton
         let originalText = (button.titleLabel!.text ?? "") as String
         if( isInputInvalid(input: originalText) == false){
+            if(lastButtonPressed == CalculatorButton.equal.name){ formulaLabel.text = "" }
             formulaLabel.text?.append(originalText)
+            lastButtonPressed = originalText
         }
     }
     
@@ -107,6 +117,7 @@ class ViewController: UIViewController {
         if( isInputInvalid(input: originalText) == false){
             // todo: calculation
             resultLabel.text = "123.456" // mock result
+            lastButtonPressed = originalText
         }
         
     }
