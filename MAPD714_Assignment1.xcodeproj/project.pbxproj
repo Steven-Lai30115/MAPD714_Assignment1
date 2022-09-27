@@ -70,10 +70,10 @@
 		7A9D7F2528D76A8200C7BFD5 /* MAPD714_Assignment1 */ = {
 			isa = PBXGroup;
 			children = (
+				B12C57A428E2B2B300B17327 /* view */,
 				24B4896028E228DD003AB5EA /* model */,
 				7A9D7F2628D76A8200C7BFD5 /* AppDelegate.swift */,
 				7A9D7F2828D76A8200C7BFD5 /* SceneDelegate.swift */,
-				7A9D7F2A28D76A8200C7BFD5 /* ViewController.swift */,
 				7A9D7F2C28D76A8200C7BFD5 /* Main.storyboard */,
 				7A9D7F2F28D76A8300C7BFD5 /* Assets.xcassets */,
 				7A9D7F3128D76A8300C7BFD5 /* LaunchScreen.storyboard */,
@@ -81,6 +81,14 @@
 				24B4895E28E226E0003AB5EA /* ext.swift */,
 			);
 			path = MAPD714_Assignment1;
+			sourceTree = "<group>";
+		};
+		B12C57A428E2B2B300B17327 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7A9D7F2A28D76A8200C7BFD5 /* ViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
