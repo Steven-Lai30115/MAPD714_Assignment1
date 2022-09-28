@@ -26,7 +26,6 @@ class CalculatorViewModel: ObservableObject {
     var _val1: String = ""
     var _val2: String = ""
     
-    var state: CalculateState = CalculateState.initState
     var operateSymbol: String = ""
     @Published var display: String = "0"
     
