@@ -110,7 +110,14 @@ class CalculatorViewModel: ObservableObject {
             _numberInput.append(input)
 
         } else if (_lastIsOperator == true) {
-            _numberInput.append(input)
+            if((_numberInput.last?.hasSuffix(".") == true)){
+                var val = _numberInput.popLast()!
+                val = val + input
+                _numberInput.append(val)
+            }
+            else{
+                _numberInput.append(input)
+            }
         } else {
             var val = _numberInput.popLast()!
             val = val + input
@@ -126,7 +133,7 @@ class CalculatorViewModel: ObservableObject {
             if(_numberInput.last!.contains(".")) { return }
             var val = _numberInput.popLast()!
             val = val + "."
-
+            _numberInput.append(val)
             return
         } else if(input == CalculatorButton.percentage.name) {
             let val = _numberInput.popLast()!
@@ -185,6 +192,6 @@ class CalculatorViewModel: ObservableObject {
         result = seriesFormula[0]
         _numberInput = [seriesFormula[0]]
         _operatorInput = []
-        _lastIsOperator = nil
+        //_lastIsOperator = nil
     }
 }
