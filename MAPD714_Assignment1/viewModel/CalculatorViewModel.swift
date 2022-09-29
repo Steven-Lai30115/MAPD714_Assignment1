@@ -104,6 +104,7 @@ class CalculatorViewModel: ObservableObject {
     
     func decimalFilter(input: String) -> String{
         // Check input string has valid decimal (not 2".0")
+        if(input.count <= 0) {return input}
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 8
@@ -114,7 +115,7 @@ class CalculatorViewModel: ObservableObject {
     
     
     func getResultDisplay() ->String {
-        return decimalFilter(input: result) 
+        return decimalFilter(input: result)
     }
     
     func handleNumberInput(input: String) {
@@ -173,7 +174,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func calculate() {
-        if _numberInput.count <= 0 { return }
+        if _numberInput.count <= 1 { return }
         var seriesFormula : [String] = []
         for i in 0..<_numberInput.count {
             if i < _numberInput.count {seriesFormula.append(_numberInput[i])}
