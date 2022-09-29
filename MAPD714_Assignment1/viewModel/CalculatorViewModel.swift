@@ -79,7 +79,7 @@ class CalculatorViewModel: ObservableObject {
             _operatorInput.removeLast()
             _lastIsOperator = false
         } else {
-            var lastNumber = _numberInput.popLast()
+            let lastNumber = _numberInput.popLast()
             
             if (lastNumber!.count) > 1 {
                 let number = lastNumber!.dropLast()
@@ -117,7 +117,6 @@ class CalculatorViewModel: ObservableObject {
             _numberInput.append(val)
         }
         _lastIsOperator = false
-
     }
     
     func handleOperatorInput(input: String) {
@@ -148,23 +147,21 @@ class CalculatorViewModel: ObservableObject {
             if i < _numberInput.count {seriesFormula.append(_numberInput[i])}
             if i < _operatorInput.count {seriesFormula.append(_operatorInput[i])}
         }
-        
         for operateSymbol in _operatorInput {
             if ![CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
                 continue
             }
-            var loc = seriesFormula.firstIndex(of: operateSymbol)!
-            var val1 : String = seriesFormula[loc-1]
-            var val2 : String = seriesFormula[loc+1]
+            let loc = seriesFormula.firstIndex(of: operateSymbol)!
+            let val1 : String = seriesFormula[loc-1]
+            let val2 : String = seriesFormula[loc+1]
             if operateSymbol == CalculatorButton.divide.name {
-                seriesFormula[loc] = String(subtract(val1: val1, val2: val2))
+                seriesFormula[loc] = String(divide(val1: val1, val2: val2))
             } else {
                 seriesFormula[loc] = String(multipy(val1: val1, val2: val2))
             }
             
             seriesFormula.remove(at: loc+1)
             seriesFormula.remove(at: loc-1)
-            print(seriesFormula, "111")
         }
         _operatorInput.removeAll(where: {CalculatorButton.divide.name == $0})
         _operatorInput.removeAll(where: {CalculatorButton.multiply.name == $0})
@@ -173,9 +170,9 @@ class CalculatorViewModel: ObservableObject {
             if [CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
                 continue
             }
-            var loc = seriesFormula.firstIndex(of: operateSymbol)!
-            var val1 : String = seriesFormula[loc-1]
-            var val2 : String = seriesFormula[loc+1]
+            let loc = seriesFormula.firstIndex(of: operateSymbol)!
+            let val1 : String = seriesFormula[loc-1]
+            let val2 : String = seriesFormula[loc+1]
             if operateSymbol == CalculatorButton.add.name {
                 seriesFormula[loc] = String(add(val1: val1, val2: val2))
             } else {
@@ -186,7 +183,7 @@ class CalculatorViewModel: ObservableObject {
             seriesFormula.remove(at: loc-1)
         }
         result = seriesFormula[0]
-        _numberInput = []
+        _numberInput = [seriesFormula[0]]
         _operatorInput = []
         _lastIsOperator = nil
     }
