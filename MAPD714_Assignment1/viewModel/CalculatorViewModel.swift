@@ -70,6 +70,7 @@ class CalculatorViewModel: ObservableObject {
     func clear() {
         _numberInput = []
         _operatorInput = []
+        result = ""
         _lastIsOperator = nil
     }
 
@@ -95,14 +96,27 @@ class CalculatorViewModel: ObservableObject {
         var d: [String] = []
         let count = max(_numberInput.count, _operatorInput.count)
         for i in 0..<count {
-            if i < _numberInput.count {d.append(_numberInput[i])}
+            if i < _numberInput.count {d.append(decimalFilter(input: _numberInput[i]))}
             if i < _operatorInput.count {d.append(_operatorInput[i])}
         }
         return d.joined()
     }
     
+    func decimalFilter(input: String) -> String{
+        // Check input string has valid decimal (not 2".0")
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 8
+        formatter.numberStyle = .decimal
+        let tempSting = formatter.string(from: Double(input)! as NSNumber)
+        return tempSting ?? input
+    }
+    
+    
     func getResultDisplay() ->String {
-        return result
+        let adjustResult = Double(result)?.formatted(FloatingPointFormatStyle())
+        let finalResult = (adjustResult != nil) ? String(adjustResult!) : result
+        return finalResult
     }
     
     func handleNumberInput(input: String) {
