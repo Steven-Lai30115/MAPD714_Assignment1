@@ -16,7 +16,6 @@
 		7A9D7F2E28D76A8200C7BFD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F2C28D76A8200C7BFD5 /* Main.storyboard */; };
 		7A9D7F3028D76A8300C7BFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F2F28D76A8300C7BFD5 /* Assets.xcassets */; };
 		7A9D7F3328D76A8300C7BFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F3128D76A8300C7BFD5 /* LaunchScreen.storyboard */; };
-		B10C01AB28E3835500DC8B18 /* CalculationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C01AA28E3835500DC8B18 /* CalculationState.swift */; };
 		B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		7A9D7F2F28D76A8300C7BFD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A9D7F3228D76A8300C7BFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9D7F3428D76A8300C7BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B10C01AA28E3835500DC8B18 /* CalculationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationState.swift; sourceTree = "<group>"; };
 		B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				24B4896128E228F3003AB5EA /* CalculatorModel.swift */,
-				B10C01AA28E3835500DC8B18 /* CalculationState.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -188,7 +185,6 @@
 				24B4895F28E226E0003AB5EA /* ext.swift in Sources */,
 				7A9D7F2728D76A8200C7BFD5 /* AppDelegate.swift in Sources */,
 				B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */,
-				B10C01AB28E3835500DC8B18 /* CalculationState.swift in Sources */,
 				7A9D7F2928D76A8200C7BFD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
