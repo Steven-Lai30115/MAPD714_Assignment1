@@ -48,18 +48,17 @@ class ViewController: UIViewController {
          Buttons: Backspace
          */
         @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
-            let button = sender as UIButton
             viewModel.backspace()
-            formulaLabel.text = viewModel.getDisplay()
+            formulaLabel.text = viewModel.getFormulaDisplay()
         }
     
         /**
          Buttons: C (Clear)
          */
         @IBAction func onClearButtonPressed(_ sender: UIButton) {
-            let button = sender as UIButton
             viewModel.clear()
-            formulaLabel.text = viewModel.getDisplay()
+            formulaLabel.text = ""
+            resultLabel.text = ""
         }
         
         /**
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
             let button = sender as UIButton
             let input = (button.titleLabel!.text ?? "") as String
             viewModel.handleOperatorInput(input: input)
-            formulaLabel.text = viewModel.getDisplay()
+            formulaLabel.text = viewModel.getFormulaDisplay()
         }
         /**
          Buttons: 0 1 2 3 4 5 6 7 8 9
@@ -78,16 +77,15 @@ class ViewController: UIViewController {
             let button = sender as UIButton
             let input = (button.titleLabel!.text ?? "") as String
             viewModel.handleNumberInput(input: input)
-            formulaLabel.text = viewModel.getDisplay()
+            formulaLabel.text = viewModel.getFormulaDisplay()
         }
         
         /**
          Button: =
          */
         @IBAction func onEqualButtonPressed(_ sender: UIButton) {
-            let button = sender as UIButton
-            let input = (button.titleLabel!.text ?? "") as String
-            viewModel.calculate(input: input)
+            viewModel.calculate()
+            resultLabel.text = viewModel.getResultDisplay()
         }
         
     }

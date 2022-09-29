@@ -23,10 +23,7 @@ class CalculatorViewModel: ObservableObject {
     var _numberInput: [String] = []
     var _operatorInput: [String] = []
     var _lastIsOperator : Bool?
-    var _val1: String = ""
-    var _val2: String = ""
     
-    var operateSymbol: String = ""
     @Published var display: String = "0"
     
     var _isNumber: Bool = false
@@ -38,20 +35,20 @@ class CalculatorViewModel: ObservableObject {
         
     }
     
-    func add() -> Double {
-        return (Double(self._val1)! + Double(self._val2)!)
+    func add(val1: String, val2: String) -> Double {
+        return (Double(val1)! + Double(val2)!)
     }
     
-    func subtract() -> Double {
-        return (Double(self._val1)! - Double(self._val2)!)
+    func subtract(val1: String, val2: String) -> Double {
+        return (Double(val1)! - Double(val2)!)
     }
     
-    func multipy() -> Double {
-        return (Double(self._val1)! * Double(self._val2)! )
+    func multipy(val1: String, val2: String) -> Double {
+        return (Double(val1)! * Double(val2)! )
     }
     
-    func divide() -> Double {
-        return (Double(self._val1)! / Double(self._val2)!)
+    func divide(val1: String, val2: String) -> Double {
+        return (Double(val1)! / Double(val2)!)
     }
     
     func toPercentage(val: String) -> Double {
@@ -68,31 +65,6 @@ class CalculatorViewModel: ObservableObject {
             value = value + CalculatorButton.dot.name
         }
         return value
-    }
-    
-    
-    func updateVal1(val: String) {
-        self._val1 = self._val1 + val
-        self.display = self._val1
-    }
-    func updateVal2(val: String) {
-        self._val2 = self._val2 + val
-        self.display = self._val2
-    }
-    
-    func _calculate() -> String {
-        var answer: String = ""
-
-        if(operateSymbol == CalculatorButton.add.name) {
-            answer =  String(self.add())
-        } else if(operateSymbol == CalculatorButton.subtract.name) {
-            answer =   String(self.subtract())
-        } else if(operateSymbol == CalculatorButton.multiply.name) {
-            answer =   String(self.multipy())
-        } else if(operateSymbol == CalculatorButton.divide.name) {
-            answer =   String(self.divide())
-        }
-        return answer;
     }
     
     func clear() {
@@ -119,7 +91,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     
-    func getDisplay() ->String {
+    func getFormulaDisplay() ->String {
         var d: [String] = []
         let count = max(_numberInput.count, _operatorInput.count)
         for i in 0..<count {
@@ -127,6 +99,10 @@ class CalculatorViewModel: ObservableObject {
             if i < _operatorInput.count {d.append(_operatorInput[i])}
         }
         return d.joined()
+    }
+    
+    func getResultDisplay() ->String {
+        return result
     }
     
     func handleNumberInput(input: String) {
@@ -166,9 +142,52 @@ class CalculatorViewModel: ObservableObject {
         _operatorInput.append(input)
     }
     
-    func calculate(input: String) {
+    func calculate() {
+        var seriesFormula : [String] = []
+        for i in 0..<_numberInput.count {
+            if i < _numberInput.count {seriesFormula.append(_numberInput[i])}
+            if i < _operatorInput.count {seriesFormula.append(_operatorInput[i])}
+        }
         
+        for operateSymbol in _operatorInput {
+            if ![CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
+                continue
+            }
+            var loc = seriesFormula.firstIndex(of: operateSymbol)!
+            var val1 : String = seriesFormula[loc-1]
+            var val2 : String = seriesFormula[loc+1]
+            if operateSymbol == CalculatorButton.divide.name {
+                seriesFormula[loc] = String(subtract(val1: val1, val2: val2))
+            } else {
+                seriesFormula[loc] = String(multipy(val1: val1, val2: val2))
+            }
+            
+            seriesFormula.remove(at: loc+1)
+            seriesFormula.remove(at: loc-1)
+            print(seriesFormula, "111")
+        }
+        _operatorInput.removeAll(where: {CalculatorButton.divide.name == $0})
+        _operatorInput.removeAll(where: {CalculatorButton.multiply.name == $0})
+        
+        for operateSymbol in _operatorInput {
+            if [CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
+                continue
+            }
+            var loc = seriesFormula.firstIndex(of: operateSymbol)!
+            var val1 : String = seriesFormula[loc-1]
+            var val2 : String = seriesFormula[loc+1]
+            if operateSymbol == CalculatorButton.add.name {
+                seriesFormula[loc] = String(add(val1: val1, val2: val2))
+            } else {
+                seriesFormula[loc] = String(subtract(val1: val1, val2: val2))
+            }
+            
+            seriesFormula.remove(at: loc+1)
+            seriesFormula.remove(at: loc-1)
+        }
+        result = seriesFormula[0]
+        _numberInput = []
+        _operatorInput = []
+        _lastIsOperator = nil
     }
-    
-    
 }
