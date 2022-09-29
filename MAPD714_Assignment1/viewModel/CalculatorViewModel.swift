@@ -128,7 +128,7 @@ class CalculatorViewModel: ObservableObject {
     
     func handleOperatorInput(input: String) {
         if(_numberInput.isEmpty) {return}
-        _lastIsOperator = true
+        
         if (input == CalculatorButton.dot.name) {
             if(_numberInput.last!.contains(".")) { return }
             var val = _numberInput.popLast()!
@@ -145,6 +145,18 @@ class CalculatorViewModel: ObservableObject {
 
             return
         }
+        
+        if(_lastIsOperator == nil || _lastIsOperator == false){
+            _operatorInput.append(input)
+            _lastIsOperator = true
+        }
+        else{
+            onOperatorChange(input: input)
+        }
+    }
+    
+    func onOperatorChange(input : String){
+         _operatorInput.removeLast()
         _operatorInput.append(input)
     }
     
