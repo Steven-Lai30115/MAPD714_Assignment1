@@ -114,9 +114,7 @@ class CalculatorViewModel: ObservableObject {
     
     
     func getResultDisplay() ->String {
-        let adjustResult = Double(result)?.formatted(FloatingPointFormatStyle())
-        let finalResult = (adjustResult != nil) ? String(adjustResult!) : result
-        return finalResult
+        return decimalFilter(input: result) 
     }
     
     func handleNumberInput(input: String) {
