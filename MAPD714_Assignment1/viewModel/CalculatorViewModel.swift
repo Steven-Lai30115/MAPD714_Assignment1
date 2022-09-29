@@ -1,8 +1,9 @@
 //
 //  CalculatorViewModel.swift
-//  MAPD714_Assignment1
+//  MAPD714_Assignment2
 //
-//  Created by Charlene Cheung on 27/9/2022.
+//  Created by Pui Yan Cheung (301252393), Man Nok PUN (301269138), Chin Wai Lai(301257824).
+//  Last modified 15:28 29 Sept 2022
 //
 
 import Foundation
@@ -23,6 +24,7 @@ class CalculatorViewModel: ObservableObject {
     var _numberInput: [String] = []
     var _operatorInput: [String] = []
     var _lastIsOperator : Bool?
+    var _isCalculated : Bool = false
     
     @Published var display: String = "0"
     
@@ -72,6 +74,7 @@ class CalculatorViewModel: ObservableObject {
         _operatorInput = []
         result = ""
         _lastIsOperator = nil
+        _isCalculated = false
     }
 
     func backspace() {
@@ -118,6 +121,13 @@ class CalculatorViewModel: ObservableObject {
         return decimalFilter(input: result)
     }
     
+    func resetCheck( completetCheck : () -> ()){
+        if(_isCalculated && _lastIsOperator != true){
+            clear()
+            completetCheck()
+        }
+    }
+    
     func handleNumberInput(input: String) {
         if (_lastIsOperator == nil) {
             _numberInput.append(input)
@@ -140,6 +150,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func handleOperatorInput(input: String) {
+        _isCalculated = false
         if(_numberInput.isEmpty) {return}
         
         if (input == CalculatorButton.dot.name) {
@@ -219,5 +230,6 @@ class CalculatorViewModel: ObservableObject {
         _numberInput = [seriesFormula[0]]
         _operatorInput = []
         _lastIsOperator = nil
+        _isCalculated = true
     }
 }

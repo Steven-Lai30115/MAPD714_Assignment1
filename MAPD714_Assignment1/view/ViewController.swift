@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  MAPD714_Assignment1
+//  MAPD714_Assignment2
 //  Calculator App
 //  Created by  Pui Yan Cheung (301252393), Man Nok PUN (301269138), Chin Wai Lai(301257824).
-//  Last modified 15:28 19 Sept 2022
+//  Last modified 15:28 29 Sept 2022
 //
 
 import UIKit
@@ -57,8 +57,7 @@ class ViewController: UIViewController {
          */
         @IBAction func onClearButtonPressed(_ sender: UIButton) {
             viewModel.clear()
-            formulaLabel.text = ""
-            resultLabel.text = ""
+            resetLabelText ()
         }
         
         /**
@@ -76,8 +75,16 @@ class ViewController: UIViewController {
         @IBAction func onNumberButtonPressed(_ sender: UIButton) {
             let button = sender as UIButton
             let input = (button.titleLabel!.text ?? "") as String
+            viewModel.resetCheck {
+                resetLabelText ()
+            }
             viewModel.handleNumberInput(input: input)
             formulaLabel.text = viewModel.getFormulaDisplay()
+        }
+    
+        func resetLabelText (){
+            formulaLabel.text = ""
+            resultLabel.text = ""
         }
         
         /**
