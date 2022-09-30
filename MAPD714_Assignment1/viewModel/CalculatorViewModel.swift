@@ -183,7 +183,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func calculate() {
-        if _numberInput.count <= 1 { return }
+        if _numberInput.count <= _operatorInput.count { return }
         var seriesFormula : [String] = []
         for i in 0..<_numberInput.count {
             if i < _numberInput.count {seriesFormula.append(_numberInput[i])}
