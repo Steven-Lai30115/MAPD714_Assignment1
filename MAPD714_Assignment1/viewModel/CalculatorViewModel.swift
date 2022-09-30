@@ -113,6 +113,7 @@ class CalculatorViewModel: ObservableObject {
         formatter.maximumFractionDigits = 8
         formatter.numberStyle = .decimal
         let tempSting = formatter.string(from: Double(input)! as NSNumber)
+        if(input.last == ".") { return input }
         return tempSting ?? input
     }
     
@@ -134,13 +135,10 @@ class CalculatorViewModel: ObservableObject {
 
         } else if (_lastIsOperator == true) {
             if((_numberInput.last?.hasSuffix(".") == true)){
-                var val = _numberInput.popLast()!
-                val = val + input
+                let val = _numberInput.popLast()!
                 _numberInput.append(val)
             }
-            else{
-                _numberInput.append(input)
-            }
+            _numberInput.append(input)
         } else {
             var val = _numberInput.popLast()!
             val = val + input
