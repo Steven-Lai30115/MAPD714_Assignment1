@@ -225,8 +225,6 @@ class CalculatorViewModel: ObservableObject {
             seriesFormula.remove(at: loc-1)
         }
         result = seriesFormula[0]
-        _numberInput = [seriesFormula[0]]
-        _operatorInput = []
         _lastIsOperator = nil
         _isCalculated = true
     }
