@@ -37,28 +37,37 @@ class CalculatorViewModel: ObservableObject {
         
     }
     
-    func add(val1: String, val2: String) -> Double {
-        return (Double(val1)! + Double(val2)!)
+    func add(val1: String, val2: String) -> String {
+        return String(Double(val1)! + Double(val2)!)
     }
     
-    func subtract(val1: String, val2: String) -> Double {
-        return (Double(val1)! - Double(val2)!)
+    func subtract(val1: String, val2: String) -> String {
+        return String(Double(val1)! - Double(val2)!)
     }
     
-    func multipy(val1: String, val2: String) -> Double {
-        return (Double(val1)! * Double(val2)! )
+    func multipy(val1: String, val2: String) -> String {
+        return String(Double(val1)! * Double(val2)! )
     }
     
-    func divide(val1: String, val2: String) -> Double {
-        return (Double(val1)! / Double(val2)!)
+    func divide(val1: String, val2: String) -> String {
+        return String(Double(val1)! / Double(val2)!)
     }
     
-    func toPercentage(val: String) -> Double {
-        return (Double(val)! / 100)
+    func toPercentage(val: String) -> String {
+        return String(Double(val)! / 100)
     }
     
-    func toOpposeValue(val: String) -> Double {
-        return Double(val)! / -1
+    func toOpposeValue(val: String) -> String {
+        if (val.contains(CalculatorButton.percentage.name)) {
+            if(val.contains(CalculatorButton.subtract.name)) {
+                var t = val
+                t.removeFirst()
+                return t
+            } else {
+                return "-\(val)"
+            }
+        }
+        return String(Double(val)! / -1)
     }
     
     func toFloatingPoint(val: String) -> String {
@@ -112,9 +121,11 @@ class CalculatorViewModel: ObservableObject {
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 8
         formatter.numberStyle = .decimal
-        let tempSting = formatter.string(from: Double(input)! as NSNumber)
-        if(input.last == ".") { return input }
-        return tempSting ?? input
+        if(input.last == "." || input.contains("%")) {
+            return input
+        } else {
+            return formatter.string(from: Double(input)! as NSNumber) ?? input
+        }
     }
     
     
@@ -158,12 +169,13 @@ class CalculatorViewModel: ObservableObject {
             _numberInput.append(val)
             return
         } else if(input == CalculatorButton.percentage.name) {
+            if(_numberInput.last!.contains("%")) { return }
             let val = _numberInput.popLast()!
-            _numberInput.append(String(self.toPercentage(val: val)))
+            _numberInput.append(val+"%")
             return
         } else if (input == CalculatorButton.plusMinus.name) {
             let val = _numberInput.popLast()!
-            _numberInput.append(String(self.toOpposeValue(val: val)))
+            _numberInput.append(self.toOpposeValue(val: val))
 
             return
         }
@@ -186,8 +198,22 @@ class CalculatorViewModel: ObservableObject {
         if _numberInput.count <= _operatorInput.count { return }
         var seriesFormula : [String] = []
         for i in 0..<_numberInput.count {
-            if i < _numberInput.count {seriesFormula.append(_numberInput[i])}
+            var curVal = _numberInput[i]
+            
+            if curVal.contains("%"){
+                if([CalculatorButton.add.name, CalculatorButton.subtract.name].contains(seriesFormula.last)) {
+                    curVal.removeLast()
+                    let lastVal = Double(_numberInput[i-1])
+                    curVal = String(lastVal! * Double(self.toPercentage(val: curVal))!)
+                } else {
+                    curVal.removeLast()
+                    curVal = String(curVal)
+                    curVal = self.toPercentage(val: curVal)
+                }
+            }
+            if i < _numberInput.count {seriesFormula.append(curVal)}
             if i < _operatorInput.count {seriesFormula.append(_operatorInput[i])}
+            
         }
         for operateSymbol in _operatorInput {
             if ![CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
@@ -197,9 +223,9 @@ class CalculatorViewModel: ObservableObject {
             let val1 : String = seriesFormula[loc-1]
             let val2 : String = seriesFormula[loc+1]
             if operateSymbol == CalculatorButton.divide.name {
-                seriesFormula[loc] = String(divide(val1: val1, val2: val2))
+                seriesFormula[loc] = self.divide(val1: val1, val2: val2)
             } else {
-                seriesFormula[loc] = String(multipy(val1: val1, val2: val2))
+                seriesFormula[loc] = self.multipy(val1: val1, val2: val2)
             }
             
             seriesFormula.remove(at: loc+1)
@@ -216,9 +242,9 @@ class CalculatorViewModel: ObservableObject {
             let val1 : String = seriesFormula[loc-1]
             let val2 : String = seriesFormula[loc+1]
             if operateSymbol == CalculatorButton.add.name {
-                seriesFormula[loc] = String(add(val1: val1, val2: val2))
+                seriesFormula[loc] = self.add(val1: val1, val2: val2)
             } else {
-                seriesFormula[loc] = String(subtract(val1: val1, val2: val2))
+                seriesFormula[loc] = self.subtract(val1: val1, val2: val2)
             }
             
             seriesFormula.remove(at: loc+1)
