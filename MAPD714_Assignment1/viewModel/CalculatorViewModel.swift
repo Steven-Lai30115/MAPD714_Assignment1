@@ -104,6 +104,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     
+    // return formula label display text
     func getFormulaDisplay() ->String {
         var d: [String] = []
         let count = max(_numberInput.count, _operatorInput.count)
@@ -114,6 +115,7 @@ class CalculatorViewModel: ObservableObject {
         return d.joined()
     }
     
+    // decimal value validation
     func decimalFilter(input: String) -> String{
         // Check input string has valid decimal (not 2".0")
         if(input.count <= 0) {return input}
@@ -128,7 +130,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     
-    
+    // return result label display text
     func getResultDisplay() ->String {
         return decimalFilter(input: result)
     }
@@ -158,6 +160,7 @@ class CalculatorViewModel: ObservableObject {
         _lastIsOperator = false
     }
     
+    // handle sub-operator operation ("." , "%" , "+/-")
     func handleOperatorInput(input: String) {
         _isCalculated = false
         if(_numberInput.isEmpty) {return}
@@ -194,6 +197,7 @@ class CalculatorViewModel: ObservableObject {
         _operatorInput.append(input)
     }
     
+    // calculation method with string evaluation logic + arithmetic operation
     func calculate() {
         if _numberInput.count <= _operatorInput.count { return }
         var seriesFormula : [String] = []
@@ -215,6 +219,7 @@ class CalculatorViewModel: ObservableObject {
             if i < _operatorInput.count {seriesFormula.append(_operatorInput[i])}
             
         }
+        // handle multiply value and divide value first
         for operateSymbol in _operatorInput {
             if ![CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
                 continue
@@ -234,6 +239,7 @@ class CalculatorViewModel: ObservableObject {
         _operatorInput.removeAll(where: {CalculatorButton.divide.name == $0})
         _operatorInput.removeAll(where: {CalculatorButton.multiply.name == $0})
         
+        // then handle add and subtract value
         for operateSymbol in _operatorInput {
             if [CalculatorButton.divide.name, CalculatorButton.multiply.name].contains(operateSymbol) {
                 continue
