@@ -58,16 +58,13 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func toOpposeValue(val: String) -> String {
-        if (val.contains(CalculatorButton.percentage.name)) {
-            if(val.contains(CalculatorButton.subtract.name)) {
-                var t = val
-                t.removeFirst()
-                return t
-            } else {
-                return "-\(val)"
-            }
+        if(val.contains(CalculatorButton.subtract.name)) {
+            var t = val
+            t.removeFirst()
+            return t
+        } else {
+            return "-\(val)"
         }
-        return String(Double(val)! / -1)
     }
     
     func toFloatingPoint(val: String) -> String {
@@ -167,6 +164,7 @@ class CalculatorViewModel: ObservableObject {
         if(!result.isEmpty && _lastIsOperator == nil ) {
             _operatorInput = []
             _numberInput = [result]
+            result = ""
         }
         
         if (input == CalculatorButton.dot.name) {
