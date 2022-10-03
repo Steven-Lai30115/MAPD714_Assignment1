@@ -145,7 +145,6 @@ class CalculatorViewModel: ObservableObject {
     func handleNumberInput(input: String) {
         if (_lastIsOperator == nil) {
             _numberInput.append(input)
-
         } else if (_lastIsOperator == true) {
             if((_numberInput.last?.hasSuffix(".") == true)){
                 let val = _numberInput.popLast()!
@@ -165,6 +164,11 @@ class CalculatorViewModel: ObservableObject {
         _isCalculated = false
         if(_numberInput.isEmpty) {return}
         
+        if(!result.isEmpty && _lastIsOperator == nil ) {
+            _operatorInput = []
+            _numberInput = [result]
+        }
+        
         if (input == CalculatorButton.dot.name) {
             if(_numberInput.last!.contains(".")) { return }
             var val = _numberInput.popLast()!
@@ -179,7 +183,6 @@ class CalculatorViewModel: ObservableObject {
         } else if (input == CalculatorButton.plusMinus.name) {
             let val = _numberInput.popLast()!
             _numberInput.append(self.toOpposeValue(val: val))
-
             return
         }
         
