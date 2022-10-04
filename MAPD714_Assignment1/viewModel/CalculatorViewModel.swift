@@ -141,7 +141,11 @@ class CalculatorViewModel: ObservableObject {
     
     func handleNumberInput(input: String) {
         if (_lastIsOperator == nil) {
-            _numberInput.append(input)
+            if(["-0.0", "0.0", "0", "-0"].contains(_numberInput.first)) {
+                _numberInput = [input]
+            } else {
+                _numberInput.append(input)
+            }
         } else if (_lastIsOperator == true) {
             if((_numberInput.last?.hasSuffix(".") == true)){
                 let val = _numberInput.popLast()!
