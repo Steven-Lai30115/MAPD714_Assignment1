@@ -26,16 +26,6 @@ class CalculatorViewModel: ObservableObject {
     var _lastIsOperator : Bool?
     var _isCalculated : Bool = false
     
-    @Published var display: String = "0"
-    
-    var _isNumber: Bool = false
-    var _isNumberOperator: Bool  = false
-    var _isCalculateOperator: Bool  = false
-    var _isNumberPack: Bool = false
-    
-    init() {
-        
-    }
     
     func add(val1: String, val2: String) -> String {
         return String(Double(val1)! + Double(val2)!)
