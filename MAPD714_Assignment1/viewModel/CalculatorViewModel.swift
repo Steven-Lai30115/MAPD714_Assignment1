@@ -66,7 +66,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return a random number
-    func generateRandomNumber(val: String) -> String {
+    func generateRandomNumber() -> String {
         return String(Float(arc4random()) / Float(UInt32.max))
     }
     
