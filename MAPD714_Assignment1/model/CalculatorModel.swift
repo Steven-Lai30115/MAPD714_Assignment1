@@ -8,7 +8,7 @@
 import Foundation
 
 enum CalculatorButton: String {
-    case clear, plusMinus, percentage, divide, multiply, subtract, add, one, two, three, four, five, six, seven, eight, nine, zero, dot, equal, backspace
+    case clear, plusMinus, percentage, divide, multiply, subtract, add, one, two, three, four, five, six, seven, eight, nine, zero, dot, equal, backspace, sqRoot, sq, pie, sine, cosine, tangent, Rand
     
     var name: String {
         switch self {
@@ -32,6 +32,13 @@ enum CalculatorButton: String {
         case .zero: return "0"
         case .equal: return "="
         case .backspace: return "⌫"
+        case .sqRoot: return "sqrt"
+        case .sq: return "x^2"
+        case .pie: return "π"
+        case .sine: return "sin"
+        case .cosine: return "cos"
+        case .tangent: return "tan"
+        case .Rand: return "Rand"
         }
     }
 }

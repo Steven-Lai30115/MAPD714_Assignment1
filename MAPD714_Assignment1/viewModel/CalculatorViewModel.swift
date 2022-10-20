@@ -65,6 +65,117 @@ class CalculatorViewModel: ObservableObject {
         return value
     }
     
+    // return a random number
+    func generateRandomNumber(val: String) -> String {
+        return String(Float(arc4random()) / Float(UInt32.max))
+    }
+    
+    // return display when sin button is pressed
+    func toggleSin(val: String) -> String {
+        if(val.contains(CalculatorButton.sine.name)) {
+            var t = val // sin(123)
+            t.removeLast() // sin(123
+            let index = t.index(t.startIndex, offsetBy: 4)
+            return String(t.suffix(from: index)) // 123
+        } else {
+            return "sin(\(val))"
+        }
+    }
+    
+    // return actual result of sin calculation
+    func calculateSin(val: String) -> String{ // sin(123)
+        var t = val // sin(123)
+        t.removeLast() // sin(123
+        let index = t.index(t.startIndex, offsetBy: 4)
+        let value = Double(String(t.suffix(from: index)))
+        return String(sin(value!))
+    }
+    
+    // return display when cos button is pressed
+    func toggleCos(val: String) -> String {
+        if(val.contains(CalculatorButton.cosine.name)) {
+            var t = val // cos(123)
+            t.removeLast() // cos(123
+            let index = t.index(t.startIndex, offsetBy: 4)
+            return String(t.suffix(from: index))
+        } else {
+            return "cos(\(val))"
+        }
+    }
+    // return actual result of cos calculation
+    func calculateCos(val: String) -> String{ // cos(123)
+        var t = val // cos(123)
+        t.removeLast() // cos(123
+        let index = t.index(t.startIndex, offsetBy: 4)
+        let value = Double(String(t.suffix(from: index)))
+        return String(cos(value!))
+    }
+    
+    // return display when tan button is pressed
+    func toggleTan(val: String) -> String {
+        if(val.contains(CalculatorButton.tangent.name)) {
+            var t = val // tan(123)
+            t.removeLast() // tan(123
+            let index = t.index(t.startIndex, offsetBy: 4)
+            return String(t.suffix(from: index))
+        } else {
+            return "tan(\(val))"
+        }
+    }
+    // return actual result of tan calculation
+    func calculateTan(val: String) -> String{ // tan(123)
+        var t = val // tan(123)
+        t.removeLast() // tan(123
+        let index = t.index(t.startIndex, offsetBy: 4)
+        let value = Double(String(t.suffix(from: index)))
+        return String(tan(value!))
+    }
+    
+    // return pi value
+    func pie() -> String {
+        return String(Float.pi)
+    }
+    
+    // return display when sqrt is pressed
+    func toggleSqrt(val: String) -> String {
+        if(val.contains(CalculatorButton.sqRoot.name)) {
+            var t = val // sqrt(123)
+            t.removeLast() // sqrt(123
+            let index = t.index(t.startIndex, offsetBy: 5)
+            return String(t.suffix(from: index))
+        } else {
+            return "sqrt(\(val))"
+        }
+    }
+    
+    // return actual result of sqrt calculation
+    func calculateSqrt(val: String) -> String{ // sqrt(123)
+        var t = val // sqrt(123)
+        t.removeLast() // sqrt(123
+        let index = t.index(t.startIndex, offsetBy: 5)
+        let value = Double(String(t.suffix(from: index)))
+        return String(sqrt(value!))
+    }
+    
+    // return display when x^2 is pressed
+    func toggleSquare(val: String) -> String {
+        if(val.contains("^2"/*CalculatorButton.sq.name*/)) {
+            let t = val // 123^2
+            let index = t.index(t.endIndex, offsetBy: -2)
+            return String(t.prefix(upTo: index)) //123
+        } else {
+            return "\(val)^2"
+        }
+    }
+    
+    // return actual result of x^2 calculation
+    func calculateSquare(val: String) -> String{ // 123^2
+        let t = val // 123^2
+        let index = t.index(t.endIndex, offsetBy: -2)
+        let value = Double(String(t.prefix(upTo: index)))
+        return String(value! * value!)
+    }
+    
     func clear() {
         _numberInput = []
         _operatorInput = []
