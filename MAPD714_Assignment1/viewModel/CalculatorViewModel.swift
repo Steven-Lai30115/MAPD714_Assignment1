@@ -66,11 +66,14 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return a random number
+    // -> 0.12321141
     func generateRandomNumber() -> String {
         return String(Float(arc4random()) / Float(UInt32.max))
     }
     
     // return display when sin button is pressed
+    // "123" -> "sin(123)"
+    // "sin(123)" -> "123"
     func toggleSin(val: String) -> String {
         if(val.contains(CalculatorButton.sine.name)) {
             var t = val // sin(123)
@@ -83,6 +86,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return actual result of sin calculation
+    // "sin(123)" -> "-0.45990349068959124"
     func calculateSin(val: String) -> String{ // sin(123)
         var t = val // sin(123)
         t.removeLast() // sin(123
@@ -92,6 +96,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return display when cos button is pressed
+    // "123" -> "sin(123)"
+    // "sin(123)" -> "123"
     func toggleCos(val: String) -> String {
         if(val.contains(CalculatorButton.cosine.name)) {
             var t = val // cos(123)
@@ -103,6 +109,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     // return actual result of cos calculation
+    // "cos(123)" -> "-0.8879689066918555"
     func calculateCos(val: String) -> String{ // cos(123)
         var t = val // cos(123)
         t.removeLast() // cos(123
@@ -112,6 +119,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return display when tan button is pressed
+    // "123" -> "tan(123)"
+    // "tan(123)" -> "123"
     func toggleTan(val: String) -> String {
         if(val.contains(CalculatorButton.tangent.name)) {
             var t = val // tan(123)
@@ -123,6 +132,7 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     // return actual result of tan calculation
+    // "tan(123)" -> "0.5179274715856551"
     func calculateTan(val: String) -> String{ // tan(123)
         var t = val // tan(123)
         t.removeLast() // tan(123
@@ -132,11 +142,14 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return pi value
+    // -> "3.14xxxxxxxxxxxx"
     func pie() -> String {
         return String(Float.pi)
     }
     
     // return display when sqrt is pressed
+    // "10" -> "sqrt(10)"
+    // "sqrt(10)" -> "10"
     func toggleSqrt(val: String) -> String {
         if(val.contains(CalculatorButton.sqRoot.name)) {
             var t = val // sqrt(123)
@@ -149,6 +162,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return actual result of sqrt calculation
+    // "sqrt(10)" -> 3.1622776601683795
     func calculateSqrt(val: String) -> String{ // sqrt(123)
         var t = val // sqrt(123)
         t.removeLast() // sqrt(123
@@ -158,6 +172,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return display when x^2 is pressed
+    // "10" -> "10^2"
+    // "10^2" -> "10"
     func toggleSquare(val: String) -> String {
         if(val.contains("^2"/*CalculatorButton.sq.name*/)) {
             let t = val // 123^2
@@ -169,6 +185,7 @@ class CalculatorViewModel: ObservableObject {
     }
     
     // return actual result of x^2 calculation
+    // "10^2" -> "100.0"
     func calculateSquare(val: String) -> String{ // 123^2
         let t = val // 123^2
         let index = t.index(t.endIndex, offsetBy: -2)
