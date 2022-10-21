@@ -94,6 +94,24 @@ class ViewController: UIViewController {
             viewModel.calculate()
             resultLabel.text = viewModel.getResultDisplay()
         }
-        
+    
+    // TODO: orientation
+    override func viewDidAppear(_ animated: Bool) {
+        if UIDevice.current.orientation.isLandscape {
+            _ = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            _ = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
+            
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+        
+}
 

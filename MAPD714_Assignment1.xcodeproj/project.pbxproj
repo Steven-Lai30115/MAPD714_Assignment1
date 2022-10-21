@@ -17,6 +17,7 @@
 		7A9D7F3028D76A8300C7BFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F2F28D76A8300C7BFD5 /* Assets.xcassets */; };
 		7A9D7F3328D76A8300C7BFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F3128D76A8300C7BFD5 /* LaunchScreen.storyboard */; };
 		B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */; };
+		B1DF0BD42903412B00E9DFF1 /* LandScapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DF0BD32903412B00E9DFF1 /* LandScapeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7A9D7F3228D76A8300C7BFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9D7F3428D76A8300C7BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		B1DF0BD32903412B00E9DFF1 /* LandScapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandScapeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				7A9D7F2A28D76A8200C7BFD5 /* ViewController.swift */,
+				B1DF0BD32903412B00E9DFF1 /* LandScapeViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				24B4895F28E226E0003AB5EA /* ext.swift in Sources */,
 				7A9D7F2728D76A8200C7BFD5 /* AppDelegate.swift in Sources */,
 				B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */,
+				B1DF0BD42903412B00E9DFF1 /* LandScapeViewController.swift in Sources */,
 				7A9D7F2928D76A8200C7BFD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
