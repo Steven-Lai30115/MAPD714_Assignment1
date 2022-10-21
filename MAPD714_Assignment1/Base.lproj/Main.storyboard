@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MAPD714_Assignment1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MvZ-ag-uD6" userLabel="Display Area">
-                                <rect key="frame" x="15" y="62" width="360" height="200"/>
+                                <rect key="frame" x="15" y="74" width="363" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mD6-Vg-wdt">
-                                        <rect key="frame" x="15" y="0.0" width="330" height="200"/>
+                                        <rect key="frame" x="15" y="0.0" width="333" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O17-XP-Jjx">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="75"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="bgg-H3-OJ5"/>
                                                 </constraints>
@@ -32,7 +32,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-cA-Ra1">
-                                                <rect key="frame" x="0.0" y="75" width="330" height="125"/>
+                                                <rect key="frame" x="0.0" y="75" width="333" height="125"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="125" id="zGQ-7b-Hws"/>
                                                 </constraints>
@@ -41,6 +41,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Hnt-if-IgL"/>
+                                            <constraint firstAttribute="width" constant="333" id="tD4-Ru-pDc"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Hnt-if-IgL"/>
+                                                <exclude reference="tD4-Ru-pDc"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Hnt-if-IgL"/>
+                                                <include reference="tD4-Ru-pDc"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95602448453608246" green="0.95602448453608246" blue="0.95602448453608246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -48,19 +64,49 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="BGb-4w-HyN"/>
                                     <constraint firstItem="mD6-Vg-wdt" firstAttribute="top" secondItem="MvZ-ag-uD6" secondAttribute="top" id="F43-Iu-Z0b"/>
+                                    <constraint firstAttribute="bottom" secondItem="mD6-Vg-wdt" secondAttribute="bottom" id="FQu-v2-8b5"/>
+                                    <constraint firstAttribute="trailing" secondItem="mD6-Vg-wdt" secondAttribute="trailing" constant="15" id="K76-Mv-13s"/>
                                     <constraint firstItem="mD6-Vg-wdt" firstAttribute="leading" secondItem="MvZ-ag-uD6" secondAttribute="leading" constant="15" id="Oqh-JI-ZrH"/>
                                     <constraint firstAttribute="trailing" secondItem="mD6-Vg-wdt" secondAttribute="trailing" constant="15" id="TSI-p6-zQP"/>
+                                    <constraint firstItem="mD6-Vg-wdt" firstAttribute="top" secondItem="MvZ-ag-uD6" secondAttribute="top" id="cpf-ae-qhZ"/>
+                                    <constraint firstItem="mD6-Vg-wdt" firstAttribute="leading" secondItem="MvZ-ag-uD6" secondAttribute="leading" constant="15" id="cqd-CL-yHG"/>
                                     <constraint firstAttribute="bottom" secondItem="mD6-Vg-wdt" secondAttribute="bottom" id="o6F-Nz-gi7"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BGb-4w-HyN"/>
+                                        <exclude reference="F43-Iu-Z0b"/>
+                                        <exclude reference="FQu-v2-8b5"/>
+                                        <exclude reference="K76-Mv-13s"/>
+                                        <exclude reference="Oqh-JI-ZrH"/>
+                                        <exclude reference="TSI-p6-zQP"/>
+                                        <exclude reference="cpf-ae-qhZ"/>
+                                        <exclude reference="cqd-CL-yHG"/>
+                                        <exclude reference="o6F-Nz-gi7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BGb-4w-HyN"/>
+                                        <include reference="F43-Iu-Z0b"/>
+                                        <include reference="FQu-v2-8b5"/>
+                                        <include reference="K76-Mv-13s"/>
+                                        <include reference="Oqh-JI-ZrH"/>
+                                        <include reference="TSI-p6-zQP"/>
+                                        <include reference="cpf-ae-qhZ"/>
+                                        <include reference="cqd-CL-yHG"/>
+                                        <include reference="o6F-Nz-gi7"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2hj-xx-g0b" userLabel="Button Area">
-                                <rect key="frame" x="15" y="312" width="360" height="460"/>
+                                <rect key="frame" x="15" y="324" width="363" height="460"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vde-da-nHc">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="80"/>
                                         <subviews>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8K-qB-bUZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="C">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="38"/>
@@ -72,7 +118,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjn-Fb-aPq">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+/-">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -84,7 +130,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-dO-yXQ">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
+                                                <rect key="frame" x="189" y="0.0" width="79.666666666666686" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="%">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -96,7 +142,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8B-Cp-YOY">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="78.666666666666686" height="80"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="/">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -111,12 +157,22 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Jud-7k-Q3l"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Jud-7k-Q3l"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Jud-7k-Q3l"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cMl-nL-wNx">
-                                        <rect key="frame" x="0.0" y="95" width="360" height="80"/>
+                                        <rect key="frame" x="0.0" y="95" width="363" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQH-vI-PuA">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="7">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -128,7 +184,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGm-tb-ru4">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="8">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -140,7 +196,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tl-nK-Eqz">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
+                                                <rect key="frame" x="189" y="0.0" width="79.666666666666686" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="9">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -152,7 +208,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76r-20-zvt">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="78.666666666666686" height="80"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="*">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -167,12 +223,22 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Xot-to-ZEs"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Xot-to-ZEs"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Xot-to-ZEs"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XHC-aE-9n4">
-                                        <rect key="frame" x="0.0" y="190" width="360" height="80"/>
+                                        <rect key="frame" x="0.0" y="190" width="363" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-bQ-F4Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="4">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -184,7 +250,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-s3-axY">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="5">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -196,7 +262,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QX-L6-bhL">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
+                                                <rect key="frame" x="189" y="0.0" width="79.666666666666686" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="6">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -208,7 +274,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN0-yV-k6X">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="78.666666666666686" height="80"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="-">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -223,12 +289,22 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="nvv-mP-suB"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nvv-mP-suB"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="nvv-mP-suB"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="m4Z-gf-ze6">
-                                        <rect key="frame" x="0.0" y="285" width="360" height="80"/>
+                                        <rect key="frame" x="0.0" y="285" width="363" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-zS-wVZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="1">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -240,7 +316,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlB-UP-UMY">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="2">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -252,7 +328,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaB-8R-X4y">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
+                                                <rect key="frame" x="189" y="0.0" width="79.666666666666686" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="3">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -264,7 +340,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1R-tt-Ujm">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="78.666666666666686" height="80"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -279,12 +355,22 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="B41-Ua-Gjd"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="B41-Ua-Gjd"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="B41-Ua-Gjd"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IqL-34-P48">
-                                        <rect key="frame" x="0.0" y="380" width="360" height="80"/>
+                                        <rect key="frame" x="0.0" y="380" width="363" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRz-2x-xd3">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="0">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -296,7 +382,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-hB-7fe">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="79" height="80"/>
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title=".">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -308,7 +394,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-eq-2ed">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="78.666666666666657" height="80"/>
+                                                <rect key="frame" x="189" y="0.0" width="79.666666666666686" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="⌫">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -320,7 +406,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99j-AB-t1u">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="78.666666666666686" height="80"/>
+                                                <rect key="frame" x="283.66666666666669" y="0.0" width="79.333333333333314" height="80"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="=">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -335,34 +421,159 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="4fn-cn-82V"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4fn-cn-82V"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="4fn-cn-82V"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="XHC-aE-9n4" secondAttribute="trailing" id="32L-yn-s9V"/>
                                     <constraint firstAttribute="trailing" secondItem="vde-da-nHc" secondAttribute="trailing" id="4IC-Md-BOe"/>
+                                    <constraint firstAttribute="trailing" secondItem="vde-da-nHc" secondAttribute="trailing" id="9FK-bm-Koe"/>
+                                    <constraint firstItem="m4Z-gf-ze6" firstAttribute="top" secondItem="XHC-aE-9n4" secondAttribute="bottom" constant="15" id="DAX-ou-d1G"/>
+                                    <constraint firstItem="cMl-nL-wNx" firstAttribute="top" secondItem="vde-da-nHc" secondAttribute="bottom" constant="15" id="Hbv-cM-dKT"/>
+                                    <constraint firstItem="IqL-34-P48" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="Hdq-ox-ynE"/>
+                                    <constraint firstItem="XHC-aE-9n4" firstAttribute="top" secondItem="cMl-nL-wNx" secondAttribute="bottom" constant="15" id="IAz-i0-0tg"/>
                                     <constraint firstItem="XHC-aE-9n4" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="K0q-wq-XLK"/>
                                     <constraint firstAttribute="height" constant="460" id="KeH-pB-hRB"/>
+                                    <constraint firstItem="IqL-34-P48" firstAttribute="top" secondItem="m4Z-gf-ze6" secondAttribute="bottom" constant="15" id="NUb-Pc-v7J"/>
+                                    <constraint firstItem="vde-da-nHc" firstAttribute="top" secondItem="2hj-xx-g0b" secondAttribute="top" id="OkO-fe-zGc"/>
+                                    <constraint firstItem="XHC-aE-9n4" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="RPf-FT-EOY"/>
                                     <constraint firstAttribute="trailing" secondItem="IqL-34-P48" secondAttribute="trailing" id="Sjy-5Y-VsJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="m4Z-gf-ze6" secondAttribute="trailing" id="Twz-0r-nAy"/>
+                                    <constraint firstAttribute="trailing" secondItem="XHC-aE-9n4" secondAttribute="trailing" id="XTA-PM-6Ld"/>
                                     <constraint firstItem="m4Z-gf-ze6" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="XjE-2b-fDG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="460" id="Ypx-jH-zGe"/>
                                     <constraint firstAttribute="trailing" secondItem="cMl-nL-wNx" secondAttribute="trailing" id="cW4-cj-kgf"/>
                                     <constraint firstItem="IqL-34-P48" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="dEf-LC-Uow"/>
                                     <constraint firstAttribute="trailing" secondItem="m4Z-gf-ze6" secondAttribute="trailing" id="dqm-Cz-3cN"/>
                                     <constraint firstItem="vde-da-nHc" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="ft8-TT-Clc"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMl-nL-wNx" secondAttribute="trailing" id="hD6-G0-seU"/>
+                                    <constraint firstItem="cMl-nL-wNx" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="hLa-UR-14U"/>
+                                    <constraint firstItem="m4Z-gf-ze6" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="hh5-rL-bti"/>
+                                    <constraint firstAttribute="width" constant="363" id="iqg-vm-2z4"/>
+                                    <constraint firstAttribute="trailing" secondItem="IqL-34-P48" secondAttribute="trailing" id="mdQ-wE-87j"/>
+                                    <constraint firstItem="vde-da-nHc" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="miE-as-S7J"/>
                                     <constraint firstItem="cMl-nL-wNx" firstAttribute="leading" secondItem="2hj-xx-g0b" secondAttribute="leading" id="wng-qx-UOY"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KeH-pB-hRB"/>
+                                        <exclude reference="Ypx-jH-zGe"/>
+                                        <exclude reference="iqg-vm-2z4"/>
+                                        <exclude reference="4IC-Md-BOe"/>
+                                        <exclude reference="9FK-bm-Koe"/>
+                                        <exclude reference="OkO-fe-zGc"/>
+                                        <exclude reference="ft8-TT-Clc"/>
+                                        <exclude reference="miE-as-S7J"/>
+                                        <exclude reference="Hbv-cM-dKT"/>
+                                        <exclude reference="cW4-cj-kgf"/>
+                                        <exclude reference="hD6-G0-seU"/>
+                                        <exclude reference="hLa-UR-14U"/>
+                                        <exclude reference="wng-qx-UOY"/>
+                                        <exclude reference="32L-yn-s9V"/>
+                                        <exclude reference="IAz-i0-0tg"/>
+                                        <exclude reference="K0q-wq-XLK"/>
+                                        <exclude reference="RPf-FT-EOY"/>
+                                        <exclude reference="XTA-PM-6Ld"/>
+                                        <exclude reference="DAX-ou-d1G"/>
+                                        <exclude reference="Twz-0r-nAy"/>
+                                        <exclude reference="XjE-2b-fDG"/>
+                                        <exclude reference="dqm-Cz-3cN"/>
+                                        <exclude reference="hh5-rL-bti"/>
+                                        <exclude reference="Hdq-ox-ynE"/>
+                                        <exclude reference="NUb-Pc-v7J"/>
+                                        <exclude reference="Sjy-5Y-VsJ"/>
+                                        <exclude reference="dEf-LC-Uow"/>
+                                        <exclude reference="mdQ-wE-87j"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KeH-pB-hRB"/>
+                                        <include reference="Ypx-jH-zGe"/>
+                                        <include reference="iqg-vm-2z4"/>
+                                        <include reference="4IC-Md-BOe"/>
+                                        <include reference="9FK-bm-Koe"/>
+                                        <include reference="OkO-fe-zGc"/>
+                                        <include reference="ft8-TT-Clc"/>
+                                        <include reference="miE-as-S7J"/>
+                                        <include reference="Hbv-cM-dKT"/>
+                                        <include reference="cW4-cj-kgf"/>
+                                        <include reference="hD6-G0-seU"/>
+                                        <include reference="hLa-UR-14U"/>
+                                        <include reference="wng-qx-UOY"/>
+                                        <include reference="32L-yn-s9V"/>
+                                        <include reference="IAz-i0-0tg"/>
+                                        <include reference="K0q-wq-XLK"/>
+                                        <include reference="RPf-FT-EOY"/>
+                                        <include reference="XTA-PM-6Ld"/>
+                                        <include reference="DAX-ou-d1G"/>
+                                        <include reference="Twz-0r-nAy"/>
+                                        <include reference="XjE-2b-fDG"/>
+                                        <include reference="dqm-Cz-3cN"/>
+                                        <include reference="hh5-rL-bti"/>
+                                        <include reference="Hdq-ox-ynE"/>
+                                        <include reference="NUb-Pc-v7J"/>
+                                        <include reference="Sjy-5Y-VsJ"/>
+                                        <include reference="dEf-LC-Uow"/>
+                                        <include reference="mdQ-wE-87j"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2hj-xx-g0b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="2fS-IA-Hoh"/>
+                            <constraint firstItem="2hj-xx-g0b" firstAttribute="top" secondItem="MvZ-ag-uD6" secondAttribute="bottom" constant="50" id="DXl-kq-8TN"/>
                             <constraint firstItem="2hj-xx-g0b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="EDj-8o-zgg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MvZ-ag-uD6" secondAttribute="trailing" constant="15" id="IcX-Vb-ftG"/>
                             <constraint firstItem="2hj-xx-g0b" firstAttribute="top" secondItem="MvZ-ag-uD6" secondAttribute="bottom" constant="50" id="OpN-Gl-syb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2hj-xx-g0b" secondAttribute="trailing" constant="15" id="eNR-hN-7YU"/>
                             <constraint firstItem="MvZ-ag-uD6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fwj-QA-MSm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2hj-xx-g0b" secondAttribute="bottom" constant="34" id="gFp-0N-BMz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2hj-xx-g0b" secondAttribute="trailing" constant="15" id="hpz-K5-b3e"/>
                             <constraint firstItem="MvZ-ag-uD6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="keA-hr-GLq"/>
                             <constraint firstItem="MvZ-ag-uD6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLb-Ee-tTa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IcX-Vb-ftG"/>
+                                <exclude reference="eNR-hN-7YU"/>
+                                <exclude reference="gFp-0N-BMz"/>
+                                <exclude reference="hpz-K5-b3e"/>
+                                <exclude reference="fwj-QA-MSm"/>
+                                <exclude reference="keA-hr-GLq"/>
+                                <exclude reference="vLb-Ee-tTa"/>
+                                <exclude reference="2fS-IA-Hoh"/>
+                                <exclude reference="DXl-kq-8TN"/>
+                                <exclude reference="EDj-8o-zgg"/>
+                                <exclude reference="OpN-Gl-syb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="IcX-Vb-ftG"/>
+                                <include reference="eNR-hN-7YU"/>
+                                <include reference="gFp-0N-BMz"/>
+                                <include reference="hpz-K5-b3e"/>
+                                <include reference="fwj-QA-MSm"/>
+                                <include reference="keA-hr-GLq"/>
+                                <include reference="vLb-Ee-tTa"/>
+                                <include reference="2fS-IA-Hoh"/>
+                                <include reference="DXl-kq-8TN"/>
+                                <include reference="EDj-8o-zgg"/>
+                                <include reference="OpN-Gl-syb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="buttonStackView" destination="2hj-xx-g0b" id="4da-H1-xO9"/>
