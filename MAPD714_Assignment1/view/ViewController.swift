@@ -98,7 +98,8 @@ class ViewController: UIViewController {
     // TODO: orientation
     override func viewDidAppear(_ animated: Bool) {
         if UIDevice.current.orientation.isLandscape {
-            _ = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
+            self.present(view!, animated: false)
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -106,8 +107,9 @@ class ViewController: UIViewController {
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
-            _ = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
-            
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "LandscapeView")
+            self.present(view!, animated: false)
+
         } else {
             dismiss(animated: true, completion: nil)
         }
