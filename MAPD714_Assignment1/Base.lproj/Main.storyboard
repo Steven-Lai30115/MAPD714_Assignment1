@@ -30,6 +30,16 @@
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="bgg-H3-OJ5"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="bgg-H3-OJ5"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-cA-Ra1">
                                                 <rect key="frame" x="0.0" y="75" width="333" height="125"/>
@@ -39,6 +49,16 @@
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="47"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="zGQ-7b-Hws"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="zGQ-7b-Hws"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
