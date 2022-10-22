@@ -75,21 +75,21 @@ class CalculatorViewModel: ObservableObject {
     // "123" -> "-0.45990349068959124"
     func calculateSin(val: String) -> String{
         let value = Double(val)
-        return String(sin(value!))
+        return String(sin(value! * Double(Float.pi) / 180))
     }
     
     // return actual result of cos calculation
     // "123" -> "-0.8879689066918555"
     func calculateCos(val: String) -> String{
         let value = Double(val)
-        return String(cos(value!))
+        return String(cos(value! * Double(Float.pi) / 180))
     }
     
     // return actual result of tan calculation
     // "123" -> "0.5179274715856551"
     func calculateTan(val: String) -> String{
         let value = Double(val)
-        return String(tan(value!))
+        return String(tan(value! * Double(Float.pi) / 180))
     }
     
     // return pi value
