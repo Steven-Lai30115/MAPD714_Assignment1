@@ -157,7 +157,8 @@ class CalculatorViewModel: ObservableObject {
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 8
         formatter.numberStyle = .decimal
-        if(input.last == "." || input.contains("%")) {
+        let exceptList = [CalculatorButton.Rand.name, CalculatorButton.pi.name]
+        if(input.last == "." || input.contains("%") || exceptList.contains(input)) {
             return input
         } else {
             return formatter.string(from: Double(input)! as NSNumber) ?? input
