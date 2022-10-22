@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina6_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MAPD714_Assignment1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvZ-ag-uD6" userLabel="Display Area">
-                                <rect key="frame" x="15" y="74" width="363" height="200"/>
+                                <rect key="frame" x="15" y="62" width="363" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mD6-Vg-wdt">
                                         <rect key="frame" x="15" y="0.0" width="333" height="200"/>
@@ -121,7 +121,7 @@
                                 </variation>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2hj-xx-g0b" userLabel="Button Area">
-                                <rect key="frame" x="15" y="324" width="333" height="360"/>
+                                <rect key="frame" x="15" y="312" width="333" height="360"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vde-da-nHc">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="60"/>
@@ -607,30 +607,35 @@
             </objects>
             <point key="canvasLocation" x="129.23076923076923" y="115.16587677725119"/>
         </scene>
-        <!--Landscape View Controller-->
+        <!--View Controller-->
         <scene sceneID="RW0-mX-FKV">
             <objects>
-                <viewController storyboardIdentifier="LandscapeView" automaticallyAdjustsScrollViewInsets="NO" id="0bF-uQ-1Jw" customClass="LandscapeViewController" customModule="MAPD714_Assignment1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pbb-CQ-yM7">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                <viewController storyboardIdentifier="LandscapeView" automaticallyAdjustsScrollViewInsets="NO" id="0bF-uQ-1Jw" customClass="ViewController" customModule="MAPD714_Assignment1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Pbb-CQ-yM7">
+                        <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CW2-E8-1Sg" userLabel="Display Area">
-                                <rect key="frame" x="62" y="59" width="750" height="98"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CW2-E8-1Sg" userLabel="Display Area">
+                                <rect key="frame" x="53" y="47" width="820" height="100"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hyE-bB-7we">
-                                        <rect key="frame" x="15" y="0.0" width="750" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hyE-bB-7we">
+                                        <rect key="frame" x="0.0" y="0.0" width="820" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNX-bo-uY3">
-                                                <rect key="frame" x="0.0" y="0.0" width="750" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="820" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="MTl-4L-fpE"/>
+                                                    <constraint firstAttribute="width" constant="820" id="aZH-oJ-BWx"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjk-Da-mNy">
-                                                <rect key="frame" x="0.0" y="54" width="750" height="46"/>
+                                                <rect key="frame" x="0.0" y="50" width="820" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="46" id="I0X-d6-jx9"/>
+                                                    <constraint firstAttribute="height" constant="50" id="S7p-x7-G1j"/>
+                                                    <constraint firstAttribute="width" constant="820" id="fiB-FU-Eg8"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="47"/>
                                                 <nil key="textColor"/>
@@ -638,27 +643,26 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Gqn-6X-7RJ"/>
-                                            <constraint firstAttribute="width" constant="750" id="op0-gO-1LI"/>
+                                            <constraint firstAttribute="height" constant="100" id="ccY-g7-MQU"/>
+                                            <constraint firstAttribute="width" constant="820" id="yFs-zv-Y1P"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95602448449999999" green="0.95602448449999999" blue="0.95602448449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="hyE-bB-7we" firstAttribute="top" secondItem="CW2-E8-1Sg" secondAttribute="top" id="UHU-sS-FXs"/>
-                                    <constraint firstItem="hyE-bB-7we" firstAttribute="leading" secondItem="CW2-E8-1Sg" secondAttribute="leading" constant="15" id="dTN-r4-lt5"/>
-                                    <constraint firstAttribute="bottom" secondItem="hyE-bB-7we" secondAttribute="bottom" constant="-200" id="xRo-TB-uQz"/>
+                                    <constraint firstAttribute="width" constant="820" id="eNo-vU-K4L"/>
+                                    <constraint firstAttribute="height" constant="100" id="fOJ-AV-kh8"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R1m-0B-iGo" userLabel="Button Area">
-                                <rect key="frame" x="62" y="165" width="750" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R1m-0B-iGo" userLabel="Button Area">
+                                <rect key="frame" x="53" y="164" width="820" height="230"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YBx-ZD-uR9">
-                                        <rect key="frame" x="0.0" y="0.0" width="750" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="820" height="70"/>
                                         <subviews>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XA-ie-xcN">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="C">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="38"/>
@@ -670,7 +674,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TB-r4-SLb">
-                                                <rect key="frame" x="85" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="92.666666666666686" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="⌫">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -682,14 +686,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiL-7c-sLZ">
-                                                <rect key="frame" x="170" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="185.66666666666666" y="0.0" width="77.666666666666657" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="sin">
-                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mml-2Q-7oN">
-                                                <rect key="frame" x="255" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="278.33333333333331" y="0.0" width="77.666666666666686" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="7">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -701,7 +705,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbA-T0-ezc">
-                                                <rect key="frame" x="340" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="371" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="8">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -713,7 +717,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX8-ec-DWT">
-                                                <rect key="frame" x="425" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="464" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="9">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -725,7 +729,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDL-xc-GaY">
-                                                <rect key="frame" x="510" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="556.66666666666663" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+/-">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
@@ -737,9 +741,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5t-Hv-E3G">
-                                                <rect key="frame" x="595" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="649.33333333333337" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="*">
+                                                <buttonConfiguration key="configuration" style="filled" title="＊">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" red="1" green="0.2470588235" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -749,7 +753,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77Y-bs-DE4">
-                                                <rect key="frame" x="680" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="742.33333333333337" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
@@ -762,36 +766,36 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="750" id="c7Y-jz-wdd"/>
-                                            <constraint firstAttribute="height" constant="50" id="nHd-DM-ZBa"/>
+                                            <constraint firstAttribute="height" constant="70" id="Hay-Qz-pvp"/>
+                                            <constraint firstAttribute="width" constant="820" id="Pl6-5d-h0I"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wua-vy-jqn">
-                                        <rect key="frame" x="0.0" y="65" width="750" height="50"/>
+                                        <rect key="frame" x="0.0" y="95" width="820" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFP-Vp-WsJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="√">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftP-A9-3qf">
-                                                <rect key="frame" x="85" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="92.666666666666686" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="π">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcQ-NX-INv">
-                                                <rect key="frame" x="170" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="185.66666666666666" y="0.0" width="77.666666666666657" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="cos">
-                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
+                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="26"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-XV-BRM">
-                                                <rect key="frame" x="255" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="278.33333333333331" y="0.0" width="77.666666666666686" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="4">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -803,7 +807,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-3M-TgR">
-                                                <rect key="frame" x="340" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="371" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="5">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -815,7 +819,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1x-LN-R85">
-                                                <rect key="frame" x="425" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="464" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="6">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -827,7 +831,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smc-zC-uK8">
-                                                <rect key="frame" x="510" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="556.66666666666663" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="%">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -839,7 +843,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpm-g8-yMe">
-                                                <rect key="frame" x="595" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="649.33333333333337" y="0.0" width="78" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="/">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -851,7 +855,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6V-Y5-TYd">
-                                                <rect key="frame" x="680" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="742.33333333333337" y="0.0" width="77.666666666666629" height="70"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="-">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -864,35 +868,36 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="c2Y-Mm-DAc"/>
+                                            <constraint firstAttribute="height" constant="70" id="ehC-d9-fp0"/>
+                                            <constraint firstAttribute="width" constant="820" id="jf7-kO-Sud"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-0J-DdA">
-                                        <rect key="frame" x="0.0" y="130" width="750" height="50"/>
+                                        <rect key="frame" x="0.0" y="190" width="820" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpb-1C-LIc">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="PI">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jou-CG-jk2">
-                                                <rect key="frame" x="85" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="92.666666666666686" y="0.0" width="78" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="rand">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFs-fY-VUk">
-                                                <rect key="frame" x="170" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="185.66666666666666" y="0.0" width="77.666666666666657" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="tan">
-                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
+                                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="28"/>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6J-9Y-jUt">
-                                                <rect key="frame" x="255" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="278.33333333333331" y="0.0" width="77.666666666666686" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="1">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -904,7 +909,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-3r-s3z">
-                                                <rect key="frame" x="340" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="371" y="0.0" width="78" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="2">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -916,7 +921,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHA-ra-JNp">
-                                                <rect key="frame" x="425" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="464" y="0.0" width="77.666666666666629" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="3">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -928,7 +933,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-Tf-hAs">
-                                                <rect key="frame" x="510" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="556.66666666666663" y="0.0" width="77.666666666666629" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="0">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -940,7 +945,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4e-Ej-7tB">
-                                                <rect key="frame" x="595" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="649.33333333333337" y="0.0" width="78" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title=".">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -952,7 +957,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRa-qp-dbl">
-                                                <rect key="frame" x="680" y="0.0" width="70" height="50"/>
+                                                <rect key="frame" x="742.33333333333337" y="0.0" width="77.666666666666629" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="=">
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
@@ -965,27 +970,46 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="mkL-SK-eqg"/>
+                                            <constraint firstAttribute="height" constant="70" id="2tz-U0-wCw"/>
+                                            <constraint firstAttribute="width" constant="820" id="3sI-X3-gDx"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XiB-0J-DdA" secondAttribute="bottom" id="Acr-6l-8wR"/>
+                                    <constraint firstItem="XiB-0J-DdA" firstAttribute="top" secondItem="Wua-vy-jqn" secondAttribute="bottom" constant="25" id="FJY-k8-CwJ"/>
+                                    <constraint firstItem="YBx-ZD-uR9" firstAttribute="leading" secondItem="R1m-0B-iGo" secondAttribute="leading" id="FPc-0K-ed9"/>
+                                    <constraint firstItem="XiB-0J-DdA" firstAttribute="top" secondItem="Wua-vy-jqn" secondAttribute="bottom" constant="25" id="LZy-NY-r6D"/>
+                                    <constraint firstItem="Wua-vy-jqn" firstAttribute="top" secondItem="YBx-ZD-uR9" secondAttribute="bottom" constant="25" id="S3S-em-hFo"/>
+                                    <constraint firstItem="Wua-vy-jqn" firstAttribute="top" secondItem="YBx-ZD-uR9" secondAttribute="bottom" constant="25" id="Vlh-cq-fKz"/>
+                                    <constraint firstAttribute="trailing" secondItem="XiB-0J-DdA" secondAttribute="trailing" id="Y11-VU-GZV"/>
+                                    <constraint firstAttribute="width" constant="820" id="ZAw-rv-vOw"/>
+                                    <constraint firstItem="YBx-ZD-uR9" firstAttribute="top" secondItem="R1m-0B-iGo" secondAttribute="top" id="ZMR-qS-lzt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wua-vy-jqn" secondAttribute="trailing" id="cLD-ei-ldW"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBx-ZD-uR9" secondAttribute="trailing" id="dil-wA-Awc"/>
+                                    <constraint firstItem="XiB-0J-DdA" firstAttribute="leading" secondItem="R1m-0B-iGo" secondAttribute="leading" id="i0G-UG-zc8"/>
+                                    <constraint firstAttribute="height" constant="230" id="ouQ-NR-k2i"/>
+                                    <constraint firstItem="Wua-vy-jqn" firstAttribute="leading" secondItem="R1m-0B-iGo" secondAttribute="leading" id="yfE-oB-la1"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BKx-NR-el3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="R1m-0B-iGo" firstAttribute="top" secondItem="CW2-E8-1Sg" secondAttribute="bottom" constant="8" symbolic="YES" id="5Da-js-tCF"/>
-                            <constraint firstItem="BKx-NR-el3" firstAttribute="bottom" secondItem="R1m-0B-iGo" secondAttribute="bottom" constant="14" id="E5V-Zl-8rk"/>
-                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="leading" secondItem="R1m-0B-iGo" secondAttribute="leading" id="MgH-Se-AxJ"/>
-                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="top" secondItem="BKx-NR-el3" secondAttribute="top" id="VHJ-Tl-o1C"/>
-                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="trailing" secondItem="R1m-0B-iGo" secondAttribute="trailing" id="YdW-mf-sN2"/>
-                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="leading" secondItem="BKx-NR-el3" secondAttribute="leading" constant="62" id="pZ2-xi-Syj"/>
+                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="leading" secondItem="BKx-NR-el3" secondAttribute="leading" constant="26" id="7CS-7N-1Nn"/>
+                            <constraint firstItem="BKx-NR-el3" firstAttribute="trailing" secondItem="CW2-E8-1Sg" secondAttribute="trailing" constant="26" id="FSJ-NI-iLx"/>
+                            <constraint firstItem="R1m-0B-iGo" firstAttribute="top" secondItem="CW2-E8-1Sg" secondAttribute="bottom" constant="8" id="I3v-9B-ksf"/>
+                            <constraint firstItem="R1m-0B-iGo" firstAttribute="leading" secondItem="BKx-NR-el3" secondAttribute="leading" constant="26" id="Tlg-4R-XqC"/>
+                            <constraint firstItem="CW2-E8-1Sg" firstAttribute="top" secondItem="BKx-NR-el3" secondAttribute="top" constant="20" id="db4-cJ-Jo6"/>
+                            <constraint firstItem="BKx-NR-el3" firstAttribute="trailing" secondItem="R1m-0B-iGo" secondAttribute="trailing" constant="26" id="f1h-xg-EJg"/>
+                            <constraint firstAttribute="bottom" secondItem="R1m-0B-iGo" secondAttribute="bottom" constant="40" id="iIi-Y4-Cz5"/>
+                            <constraint firstItem="R1m-0B-iGo" firstAttribute="top" secondItem="CW2-E8-1Sg" secondAttribute="bottom" constant="8" id="inS-Oh-ho1"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1u-ru-mTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779.57746478873241" y="113.74045801526717"/>
+            <point key="canvasLocation" x="778.8336933045357" y="112.14953271028037"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.24313725490196078" green="0.44313725490196076" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
