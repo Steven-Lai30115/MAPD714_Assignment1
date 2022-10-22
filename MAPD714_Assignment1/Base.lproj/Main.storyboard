@@ -654,7 +654,6 @@
                                                     <color key="baseBackgroundColor" red="0.24313725489999999" green="0.4431372549" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="onInstantOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBi-6t-lZS"/>
                                                     <action selector="onNumberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtR-Co-C2y"/>
                                                 </connections>
                                             </button>
@@ -666,7 +665,6 @@
                                                     <color key="baseBackgroundColor" red="0.24313725489999999" green="0.4431372549" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="onInstantOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RaJ-H3-Gsy"/>
                                                     <action selector="onNumberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOS-lX-884"/>
                                                 </connections>
                                             </button>
@@ -788,13 +786,13 @@
                                 <exclude reference="rFh-uv-pbr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EDj-8o-zgg"/>
-                                <include reference="OpN-Gl-syb"/>
                                 <include reference="IcX-Vb-ftG"/>
                                 <include reference="hpz-K5-b3e"/>
                                 <include reference="fwj-QA-MSm"/>
                                 <include reference="keA-hr-GLq"/>
                                 <include reference="vLb-Ee-tTa"/>
+                                <include reference="EDj-8o-zgg"/>
+                                <include reference="OpN-Gl-syb"/>
                             </mask>
                         </variation>
                     </view>

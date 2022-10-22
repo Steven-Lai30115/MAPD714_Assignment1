@@ -157,8 +157,8 @@ class CalculatorViewModel: ObservableObject {
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 8
         formatter.numberStyle = .decimal
-        let exceptList = [CalculatorButton.Rand.name, CalculatorButton.pi.name]
-        if(input.last == "." || input.contains("%") || exceptList.contains(input)) {
+        if(input.last == "." || input.contains("%") || input.contains(CalculatorButton.Rand.name) || input.contains(CalculatorButton.pi.name) ) {
+            print("decimal filter \(input)")
             return input
         } else {
             return formatter.string(from: Double(input)! as NSNumber) ?? input
@@ -192,8 +192,17 @@ class CalculatorViewModel: ObservableObject {
             _numberInput.append(input)
         } else {
             var val = _numberInput.popLast()!
-            val = val + input
-            _numberInput.append(val)
+            if(input == CalculatorButton.pi.name && String((val.last)!) == CalculatorButton.pi.name){
+                _numberInput.append(val)
+            } else if(input == CalculatorButton.Rand.name && String((val.last)!) == CalculatorButton.pi.name && val.contains(CalculatorButton.Rand.name)){
+                _numberInput.append(val)
+            } else if(String((val.last)!)  == CalculatorButton.pi.name || String((val.last)!) == CalculatorButton.Rand.name){
+                _numberInput.append(val)
+            } else{
+                val = val + input
+                _numberInput.append(val)
+            }
+            
         }
         _lastIsOperator = false
     }
@@ -230,6 +239,7 @@ class CalculatorViewModel: ObservableObject {
     
     // handle sub-operator operation ("." , "%" , "+/-")
     func handleOperatorInput(input: String) {
+        print("operator: \(input)")
         _isCalculated = false
         if(_numberInput.isEmpty) {return}
         
