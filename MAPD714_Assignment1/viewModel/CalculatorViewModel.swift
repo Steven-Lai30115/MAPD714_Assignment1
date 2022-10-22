@@ -94,7 +94,7 @@ class CalculatorViewModel: ObservableObject {
     
     // return pi value
     // -> "3.14xxxxxxxxxxxx"
-    func pie() -> String {
+    func pi() -> String {
         return String(Float.pi)
     }
     
@@ -270,8 +270,8 @@ class CalculatorViewModel: ObservableObject {
     }
     
     func interpretPi(curVal: String) -> String{
-        if curVal.contains(CalculatorButton.pie.name) {
-            let replaced = curVal.replacingOccurrences(of: CalculatorButton.pie.name, with: pie())
+        if curVal.contains(CalculatorButton.pi.name) {
+            let replaced = curVal.replacingOccurrences(of: CalculatorButton.pi.name, with: pi())
             return String(replaced)
         }
         return curVal
