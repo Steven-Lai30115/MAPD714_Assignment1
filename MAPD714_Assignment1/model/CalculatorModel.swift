@@ -16,7 +16,7 @@ enum CalculatorButton: String {
         case .plusMinus: return "+/-"
         case .percentage: return "%"
         case .divide: return "/"
-        case .multiply: return "*"
+        case .multiply: return "＊"
         case .subtract: return "-"
         case .add: return "+"
         case .one: return "1"
