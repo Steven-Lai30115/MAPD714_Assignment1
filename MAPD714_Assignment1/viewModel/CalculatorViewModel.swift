@@ -256,7 +256,7 @@ class CalculatorViewModel: ObservableObject {
             _numberInput.append(val)
             return
         } else if(input == CalculatorButton.percentage.name) {
-            if(_numberInput.last!.contains("%")) { return }
+            if(_numberInput.last!.contains("%") || _numberInput.last!.contains("π")) { return }
             let val = _numberInput.popLast()!
             _numberInput.append(val+"%")
             return
@@ -282,8 +282,23 @@ class CalculatorViewModel: ObservableObject {
     
     func interpretPi(curVal: String) -> String{
         if curVal.contains(CalculatorButton.pi.name) {
-            let replaced = curVal.replacingOccurrences(of: CalculatorButton.pi.name, with: pi())
-            return String(replaced)
+            if(curVal == CalculatorButton.pi.name){
+                let replaced = curVal.replacingOccurrences(of: CalculatorButton.pi.name, with: pi())
+                return String(replaced)
+            }
+            else    {
+                // split the curVal & multipy the value with pi
+                var leftValue = curVal
+                leftValue.popLast()
+                if(leftValue.contains("%")){
+                    leftValue = interpretPercentage(val: leftValue)
+                }
+                else if (leftValue.contains(CalculatorButton.Rand.name)){
+                    leftValue = interpretRand(curVal: leftValue)
+                }
+                let result = Float(leftValue)! * Float(pi())!
+                return String(result)
+            }
         }
         return curVal
     }
