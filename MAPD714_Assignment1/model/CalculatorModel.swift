@@ -32,13 +32,13 @@ enum CalculatorButton: String {
         case .zero: return "0"
         case .equal: return "="
         case .backspace: return "⌫"
-        case .sqRoot: return "sqrt"
+        case .sqRoot: return "√"
         case .sq: return "x^2"
         case .pie: return "π"
         case .sine: return "sin"
         case .cosine: return "cos"
         case .tangent: return "tan"
-        case .Rand: return "Rand"
+        case .Rand: return "rand"
         }
     }
 }
