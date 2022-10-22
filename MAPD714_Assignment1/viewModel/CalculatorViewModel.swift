@@ -71,73 +71,24 @@ class CalculatorViewModel: ObservableObject {
         return String(Float(arc4random()) / Float(UInt32.max))
     }
     
-    // return display when sin button is pressed
-    // "123" -> "sin(123)"
-    // "sin(123)" -> "123"
-    func toggleSin(val: String) -> String {
-        if(val.contains(CalculatorButton.sine.name)) {
-            var t = val // sin(123)
-            t.removeLast() // sin(123
-            let index = t.index(t.startIndex, offsetBy: 4)
-            return String(t.suffix(from: index)) // 123
-        } else {
-            return "sin(\(val))"
-        }
-    }
-    
     // return actual result of sin calculation
-    // "sin(123)" -> "-0.45990349068959124"
-    func calculateSin(val: String) -> String{ // sin(123)
-        var t = val // sin(123)
-        t.removeLast() // sin(123
-        let index = t.index(t.startIndex, offsetBy: 4)
-        let value = Double(String(t.suffix(from: index)))
+    // "123" -> "-0.45990349068959124"
+    func calculateSin(val: String) -> String{
+        let value = Double(val)
         return String(sin(value!))
     }
     
-    // return display when cos button is pressed
-    // "123" -> "sin(123)"
-    // "sin(123)" -> "123"
-    func toggleCos(val: String) -> String {
-        if(val.contains(CalculatorButton.cosine.name)) {
-            var t = val // cos(123)
-            t.removeLast() // cos(123
-            let index = t.index(t.startIndex, offsetBy: 4)
-            return String(t.suffix(from: index))
-        } else {
-            return "cos(\(val))"
-        }
-    }
     // return actual result of cos calculation
-    // "cos(123)" -> "-0.8879689066918555"
-    func calculateCos(val: String) -> String{ // cos(123)
-        var t = val // cos(123)
-        t.removeLast() // cos(123
-        let index = t.index(t.startIndex, offsetBy: 4)
-        let value = Double(String(t.suffix(from: index)))
+    // "123" -> "-0.8879689066918555"
+    func calculateCos(val: String) -> String{
+        let value = Double(val)
         return String(cos(value!))
     }
     
-    // return display when tan button is pressed
-    // "123" -> "tan(123)"
-    // "tan(123)" -> "123"
-    func toggleTan(val: String) -> String {
-        if(val.contains(CalculatorButton.tangent.name)) {
-            var t = val // tan(123)
-            t.removeLast() // tan(123
-            let index = t.index(t.startIndex, offsetBy: 4)
-            return String(t.suffix(from: index))
-        } else {
-            return "tan(\(val))"
-        }
-    }
     // return actual result of tan calculation
-    // "tan(123)" -> "0.5179274715856551"
-    func calculateTan(val: String) -> String{ // tan(123)
-        var t = val // tan(123)
-        t.removeLast() // tan(123
-        let index = t.index(t.startIndex, offsetBy: 4)
-        let value = Double(String(t.suffix(from: index)))
+    // "123" -> "0.5179274715856551"
+    func calculateTan(val: String) -> String{
+        let value = Double(val)
         return String(tan(value!))
     }
     
@@ -147,49 +98,17 @@ class CalculatorViewModel: ObservableObject {
         return String(Float.pi)
     }
     
-    // return display when sqrt is pressed
-    // "10" -> "sqrt(10)"
-    // "sqrt(10)" -> "10"
-    func toggleSqrt(val: String) -> String {
-        if(val.contains(CalculatorButton.sqRoot.name)) {
-            var t = val // sqrt(123)
-            t.removeLast() // sqrt(123
-            let index = t.index(t.startIndex, offsetBy: 5)
-            return String(t.suffix(from: index))
-        } else {
-            return "sqrt(\(val))"
-        }
-    }
-    
     // return actual result of sqrt calculation
-    // "sqrt(10)" -> 3.1622776601683795
-    func calculateSqrt(val: String) -> String{ // sqrt(123)
-        var t = val // sqrt(123)
-        t.removeLast() // sqrt(123
-        let index = t.index(t.startIndex, offsetBy: 5)
-        let value = Double(String(t.suffix(from: index)))
+    // "10" -> 3.1622776601683795
+    func calculateSqrt(val: String) -> String{
+        let value = Double(val)
         return String(sqrt(value!))
     }
     
-    // return display when x^2 is pressed
-    // "10" -> "10^2"
-    // "10^2" -> "10"
-    func toggleSquare(val: String) -> String {
-        if(val.contains("^2"/*CalculatorButton.sq.name*/)) {
-            let t = val // 123^2
-            let index = t.index(t.endIndex, offsetBy: -2)
-            return String(t.prefix(upTo: index)) //123
-        } else {
-            return "\(val)^2"
-        }
-    }
-    
     // return actual result of x^2 calculation
-    // "10^2" -> "100.0"
-    func calculateSquare(val: String) -> String{ // 123^2
-        let t = val // 123^2
-        let index = t.index(t.endIndex, offsetBy: -2)
-        let value = Double(String(t.prefix(upTo: index)))
+    // "10" -> "100.0"
+    func calculateSquare(val: String) -> String{
+        let value = Double(val)
         return String(value! * value!)
     }
     
@@ -278,6 +197,36 @@ class CalculatorViewModel: ObservableObject {
         _lastIsOperator = false
     }
     
+    // handle sub-operator operation ("sin", "cos", "tan", "x^2", "sqrt")
+    func handleInstantOperatorInput(input: String) {
+        _isCalculated = false
+        if(_numberInput.isEmpty) {return}
+        
+        // reuse result
+        if(!result.isEmpty && _lastIsOperator == nil ) {
+            _operatorInput = []
+            _numberInput = [result]
+            result = ""
+        }
+        
+        var val = _numberInput.popLast()!
+        val = interpretPi(curVal: val)
+        val = interpretRand(curVal: val)
+        if val.contains("%"){ val = interpretPercentage(val: val) }
+        
+        switch(input){
+            case CalculatorButton.sine.name: val = calculateSin(val: val)
+            case CalculatorButton.cosine.name: val = calculateCos(val: val)
+            case CalculatorButton.tangent.name:val = calculateTan(val: val)
+            case CalculatorButton.sq.name: val = calculateSquare(val: val)
+            case CalculatorButton.sqRoot.name:  val = calculateSqrt(val: val)
+            default: return
+        }
+        
+        _numberInput.append(val)
+        return
+    }
+    
     // handle sub-operator operation ("." , "%" , "+/-")
     func handleOperatorInput(input: String) {
         _isCalculated = false
@@ -320,6 +269,28 @@ class CalculatorViewModel: ObservableObject {
         _operatorInput.append(input)
     }
     
+    func interpretPi(curVal: String) -> String{
+        if curVal.contains(CalculatorButton.pie.name) {
+            let replaced = curVal.replacingOccurrences(of: CalculatorButton.pie.name, with: pie())
+            return String(replaced)
+        }
+        return curVal
+    }
+    func interpretRand(curVal: String) -> String{
+        if curVal.contains(CalculatorButton.Rand.name) {
+            let replaced = curVal.replacingOccurrences(of: CalculatorButton.Rand.name, with: generateRandomNumber())
+            return String(replaced)
+        }
+        return curVal
+    }
+    func interpretPercentage(val: String) -> String{
+        var curVal = val
+        curVal.removeLast()
+        curVal = String(curVal)
+        curVal = self.toPercentage(val: curVal)
+        return curVal
+    }
+    
     // calculation method with string evaluation logic + arithmetic operation
     func calculate() {
         if _numberInput.count <= _operatorInput.count { return }
@@ -327,15 +298,16 @@ class CalculatorViewModel: ObservableObject {
         for i in 0..<_numberInput.count {
             var curVal = _numberInput[i]
             
+            curVal = interpretPi(curVal: curVal)
+            curVal = interpretRand(curVal: curVal)
+            
             if curVal.contains("%"){
                 if([CalculatorButton.add.name, CalculatorButton.subtract.name].contains(seriesFormula.last)) {
                     curVal.removeLast()
                     let lastVal = Double(_numberInput[i-1])
                     curVal = String(lastVal! * Double(self.toPercentage(val: curVal))!)
                 } else {
-                    curVal.removeLast()
-                    curVal = String(curVal)
-                    curVal = self.toPercentage(val: curVal)
+                    curVal = interpretPercentage(val: curVal)
                 }
             }
             if i < _numberInput.count {seriesFormula.append(curVal)}

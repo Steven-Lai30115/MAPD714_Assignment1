@@ -59,6 +59,17 @@ class ViewController: UIViewController {
             viewModel.clear()
             resetLabelText ()
         }
+    
+    
+        /**
+          Todo: Buttons: sin cos tan x^2 sqrt
+         */
+        @IBAction func onInstantOperatorButtonPressed(_ sender: UIButton) {
+            let button = sender as UIButton
+            let input = (button.titleLabel!.text ?? "") as String
+            viewModel.handleInstantOperatorInput(input: input)
+            formulaLabel.text = viewModel.getFormulaDisplay()
+        }
         
         /**
          Buttons: % .  +/-  +  -  *  /
@@ -71,6 +82,7 @@ class ViewController: UIViewController {
         }
         /**
          Buttons: 0 1 2 3 4 5 6 7 8 9
+         Todo Buttons: Pi, Rand
          */
         @IBAction func onNumberButtonPressed(_ sender: UIButton) {
             let button = sender as UIButton
