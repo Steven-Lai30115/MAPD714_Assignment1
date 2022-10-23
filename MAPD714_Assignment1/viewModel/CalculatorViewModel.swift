@@ -251,17 +251,20 @@ class CalculatorViewModel: ObservableObject {
         }
         
         if (input == CalculatorButton.dot.name) {
+            if (_numberInput.last! == CalculatorButton.Rand.name) { return }
             if(_numberInput.last!.contains(".")) { return }
             var val = _numberInput.popLast()!
             val = val + "."
             _numberInput.append(val)
             return
         } else if(input == CalculatorButton.percentage.name) {
+            if (_numberInput.last! == CalculatorButton.Rand.name) { return }
             if(_numberInput.last!.contains("%") || _numberInput.last!.contains("π")) { return }
             let val = _numberInput.popLast()!
             _numberInput.append(val+"%")
             return
         } else if (input == CalculatorButton.plusMinus.name) {
+            if (_numberInput.last! == CalculatorButton.Rand.name) { return }
             let val = _numberInput.popLast()!
             _numberInput.append(self.toOpposeValue(val: val))
             return
