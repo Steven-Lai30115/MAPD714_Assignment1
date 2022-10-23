@@ -127,8 +127,7 @@ class CalculatorViewModel: ObservableObject {
             _lastIsOperator = false
         } else {
             let lastNumber = _numberInput.popLast()
-            
-            if (lastNumber!.count) > 1 {
+            if ((lastNumber!.count) > 1 && lastNumber != CalculatorButton.Rand.name) {
                 let number = lastNumber!.dropLast()
                 _numberInput.append(String(number))
 
