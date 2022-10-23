@@ -194,9 +194,10 @@ class CalculatorViewModel: ObservableObject {
             var val = _numberInput.popLast()!
             if(input == CalculatorButton.pi.name && String((val.last)!) == CalculatorButton.pi.name){
                 _numberInput.append(val)
-            } else if(input == CalculatorButton.Rand.name && String((val.last)!) == CalculatorButton.pi.name && val.contains(CalculatorButton.Rand.name)){
+            } else if(input == CalculatorButton.Rand.name){
+                val = CalculatorButton.Rand.name
                 _numberInput.append(val)
-            } else if(String((val.last)!)  == CalculatorButton.pi.name || String((val.last)!) == CalculatorButton.Rand.name){
+            } else if(String((val.last)!)  == CalculatorButton.pi.name || val == CalculatorButton.Rand.name){
                 _numberInput.append(val)
             } else{
                 val = val + input
