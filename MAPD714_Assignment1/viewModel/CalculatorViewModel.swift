@@ -357,8 +357,7 @@ class CalculatorViewModel: ObservableObject {
             seriesFormula.remove(at: loc+1)
             seriesFormula.remove(at: loc-1)
         }
-        _operatorInput.removeAll(where: {CalculatorButton.divide.name == $0})
-        _operatorInput.removeAll(where: {CalculatorButton.multiply.name == $0})
+        
         
         // then handle add and subtract value
         for operateSymbol in _operatorInput {
