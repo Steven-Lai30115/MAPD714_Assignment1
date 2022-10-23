@@ -17,6 +17,7 @@
 		7A9D7F3028D76A8300C7BFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F2F28D76A8300C7BFD5 /* Assets.xcassets */; };
 		7A9D7F3328D76A8300C7BFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D7F3128D76A8300C7BFD5 /* LaunchScreen.storyboard */; };
 		B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */; };
+		B1ADC9FB2904504C0065BF8A /* CalculatorButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ADC9FA2904504C0065BF8A /* CalculatorButtonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7A9D7F3228D76A8300C7BFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9D7F3428D76A8300C7BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12C57A628E2B30400B17327 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		B1ADC9FA2904504C0065BF8A /* CalculatorButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				24B4896128E228F3003AB5EA /* CalculatorModel.swift */,
+				B1ADC9FA2904504C0065BF8A /* CalculatorButtonType.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				7A9D7F2B28D76A8200C7BFD5 /* ViewController.swift in Sources */,
 				24B4896228E228F3003AB5EA /* CalculatorModel.swift in Sources */,
+				B1ADC9FB2904504C0065BF8A /* CalculatorButtonType.swift in Sources */,
 				24B4895F28E226E0003AB5EA /* ext.swift in Sources */,
 				7A9D7F2728D76A8200C7BFD5 /* AppDelegate.swift in Sources */,
 				B12C57A728E2B30400B17327 /* CalculatorViewModel.swift in Sources */,

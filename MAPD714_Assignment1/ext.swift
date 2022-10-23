@@ -27,7 +27,12 @@ extension String {
         let end = index(start, offsetBy: to - from + 1)
         return String(self[start ..< end])
     }
-    
+}
 
+extension Double {
+    var round8Digit: Double {
+        let divisor = pow(10.0, Double(8))
+        return (self * divisor).rounded() / divisor
+    }
 }
 
